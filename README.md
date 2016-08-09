@@ -12,14 +12,16 @@ project [Lib-Tile] with it included sublibraries.
 The current `version` is `0.1.0` from MM.dd.2016.
 
 <br />
-_Image:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;
-[demo-application-modified]
+_Backgroundimage:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
+_Tileimage:_ Blu Stripes made by [Seb Jachec]
 ![demo-application-modified.png][demo-application-modified]
 
 > __Hint__  
-> The image is taken from https://wall.alphacoders.com/big.php?i=723891 and is 
-> under the license from CCO Public Domain Image. Big thanks to the autor for 
-> his great work :smiley:.
+> The background image is taken from https://wall.alphacoders.com/big.php?i=723891 
+> and is under the license from CCO Public Domain Image. Big thanks to the autor for 
+> his great work :smiley:.  
+> The tile image is taken from https://www.transparenttextures.com/ and is free 
+> to use. Big thanks to the autor for his great work :smiley:.  
 
 
 
@@ -65,3 +67,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [//]: # (Links)
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Seb Jachec]:http://twitter.com/iamsebj
