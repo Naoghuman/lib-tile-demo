@@ -29,9 +29,51 @@ _Tile:_ Blu Stripes made by [Seb Jachec]
 Content
 ---
 
+* [Features](#Features)
+    - [TitledPane Background](#TiPaBa)  
+      [_Background Color_](#BaCo)  
+      [_Background Image_](#BaIm)
+    - [TitledPane Tile](#TiPaTi)  
+      [_Transparent Textures_](#TrTe)
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
+
+
+
+<br />
+Features<a name="Features" />
+---
+
+
+<br />
+### TitledPane Background<a name="TiPaBa" />
+
+TODO
+
+
+<br />
+### _Background Color_<a name="BaCo" />
+
+TODO
+
+
+<br />
+### _Background Image_<a name="BaIm" />
+
+TODO
+
+
+<br />
+### TitledPane Tile<a name="TiPaTi" />
+
+TODO
+
+
+<br />
+### _Transparent Textures_<a name="TrTe" />
+
+TODO
 
 
 
