@@ -76,6 +76,12 @@ _Image:_ ColorPicker
 Clicking the button `Reset` reset your choosen background color to the default 
 color [AQUAMARINE].
 
+<br />
+_Hint:_  
+For a later version I planed the option to define a [LinearGradient] or a 
+[RadialGradient] colors as a background color through `css` 
+&#040;[JavaFX CSS Reference Guide]&#041;.
+
 
 <br />
 ### TitledPane Tile<a name="TiPaTi" />
@@ -120,10 +126,14 @@ You can reach me under <peter.rogge@yahoo.de>.
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
 
 
+
 [//]: # (Links)
 [AQUAMARINE]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html#AQUAMARINE
 [ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
+[JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
+[RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [Seb Jachec]:http://twitter.com/iamsebj
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
