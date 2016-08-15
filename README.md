@@ -31,8 +31,8 @@ Content
 
 * [Features](#Features)
     - [TitledPane Background](#TiPaBa)  
-      [_Background Color_](#BaCo)  
-      [_Background Image_](#BaIm)
+      [_Background Image_](#BaIm)  
+      [_Background Color_](#BaCo)
     - [TitledPane Tile](#TiPaTi)  
       [_Transparent Textures_](#TrTe)
 * [License](#License)
@@ -45,9 +45,20 @@ Content
 Features<a name="Features" />
 ---
 
+The main goal from this application is to demonstrate the features from the 
+library [Lib-Tile] and its containing sub-libraries which are momentary 
+`lib-core`, `lib-transparent-textures` and `lib-transparent-textures-images`.
+
 
 <br />
 ### TitledPane Background<a name="TiPaBa" />
+
+Over the [TitledPane] `Background` you can tweak the background image and / or 
+the background color from the application.
+
+
+<br />
+### _Background Image_<a name="BaIm" />
 
 TODO
 
@@ -55,13 +66,15 @@ TODO
 <br />
 ### _Background Color_<a name="BaCo" />
 
-TODO
-
+Momentary it's only possible to choose a single color over the [ColorPicker].
 
 <br />
-### _Background Image_<a name="BaIm" />
+_Image:_ ColorPicker
+![colorpicker.png][colorpicker]
 
-TODO
+<br />
+Clicking the button `Reset` reset your choosen background color to the default 
+color [AQUAMARINE].
 
 
 <br />
@@ -102,11 +115,15 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
+[colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
 
 
 [//]: # (Links)
+[AQUAMARINE]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html#AQUAMARINE
+[ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Seb Jachec]:http://twitter.com/iamsebj
+[TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
