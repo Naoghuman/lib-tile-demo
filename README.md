@@ -13,7 +13,7 @@ The current `version` is `0.1.0` from MM.dd.2016.
 
 <br />
 _Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
-_Tile:_ Blu Stripes made by [Seb Jachec]
+_Tile:_ Blu Stripes made by [Seb Jachec]  
 ![demo-application-modified.png][demo-application-modified]
 
 > __Hint__  
@@ -69,7 +69,7 @@ TODO
 Momentary it's only possible to choose a single color over the [ColorPicker].
 
 <br />
-_Image:_ ColorPicker
+_Image:_ ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
 <br />
