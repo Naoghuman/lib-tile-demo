@@ -67,21 +67,21 @@ TODO
 <br />
 ### _Background Color_<a name="BaCo" />
 
-Momentary it's only possible to choose a single color over the [ColorPicker].
+Momentary it's only possible to choose a `single` color over the [ColorPicker].
 
 <br />
 _Image:_ ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
 <br />
-Clicking the button `Reset` reset your choosen background color to the default 
-color [AQUAMARINE].
+Clicking the button `Reset` reset the background color to the default color 
+[AQUAMARINE].
 
 <br />
 _Hint:_  
-For a later version I planed the option to define a [LinearGradient] or a 
-[RadialGradient] colors as a background color through `css` 
-&#040;[JavaFX CSS Reference Guide]&#041;.
+For a future version I plan to implement the option that the developer have the 
+option to define a [LinearGradient] or a [RadialGradient] colors as a 
+background color through `css` styling &#040;[JavaFX CSS Reference Guide]&#041;.
 
 
 <br />
