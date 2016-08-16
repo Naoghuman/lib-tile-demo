@@ -7,7 +7,8 @@ Intention
 ---
 
 This project is a `demonstration` application to show the features from the 
-project [Lib-Tile] with it included sublibraries.
+project [Lib-Tile] and it's included sublibraries `lib-tile-core`, 
+`lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
 
 The current `version` is `0.1.0` from MM.dd.2016.
 
