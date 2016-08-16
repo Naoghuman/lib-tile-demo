@@ -61,8 +61,25 @@ the background color from the application.
 <br />
 ### _Background Image_<a name="BaIm" />
 
-TODO
+With the [TextField] `Background image` the developer have the option to load 
+an optional background image from the internet. Momentary only images from the 
+internet are accepted with the size from 1280x720.
 
+_For example:_  
+* TODO add example link
+
+<br />
+_Image:_ TODO add image description  
+TODO add image
+
+<br />
+Clicking the button `Reset` removes the background image and clears the content 
+from the [TextField].
+
+<br />
+_Hint:_  
+For a future version I plan the option that the developer can also choose local 
+stored images via a [FileChooser].
 
 <br />
 ### _Background Color_<a name="BaCo" />
@@ -131,10 +148,12 @@ You can reach me under <peter.rogge@yahoo.de>.
 [//]: # (Links)
 [AQUAMARINE]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html#AQUAMARINE
 [ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
+[FileChooser]:https://docs.oracle.com/javase/8/javafx/api/javafx/stage/FileChooser.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [Seb Jachec]:http://twitter.com/iamsebj
+[TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
