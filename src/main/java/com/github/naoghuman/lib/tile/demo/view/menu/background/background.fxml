@@ -21,6 +21,7 @@
                 </HBox>
             </children>
         </VBox>
+      <ProgressBar fx:id="pbImageLoading" maxWidth="1.7976931348623157E308" prefHeight="25.0" progress="0.0" />
       <VBox>
          <children>
             <Label text="Background color" />

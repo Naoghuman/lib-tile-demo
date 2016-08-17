@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Color;
@@ -47,6 +48,7 @@ import javafx.scene.paint.Color;
 public class BackgroundPresenter implements Initializable, IActionConfiguration, IRegisterActions {
     
     @FXML private ColorPicker cpBackgroundColor;
+    @FXML private ProgressBar pbImageLoading;
     @FXML private TextField tfUrlBackgroundImage;
     
     @Override
@@ -87,6 +89,8 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background image"); // NOI18N
         
         tfUrlBackgroundImage.setText(null);
+        pbImageLoading.progressProperty().unbind();
+        pbImageLoading.setProgress(0.0d);
         ActionFacade.INSTANCE.handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
     }
     
@@ -120,6 +124,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         final TransferData data = new TransferData();
         data.setActionId(ON_ACTION__SHOW_BACKGROUND_IMAGE);
         data.setString(url);
+        data.setObject(pbImageLoading);
         
         ActionFacade.INSTANCE.handle(data);
     }

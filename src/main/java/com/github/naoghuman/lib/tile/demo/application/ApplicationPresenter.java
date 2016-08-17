@@ -21,6 +21,7 @@ import com.github.naoghuman.lib.action.api.IRegisterActions;
 import com.github.naoghuman.lib.action.api.TransferData;
 import com.github.naoghuman.lib.logger.api.LoggerFacade;
 import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
+import com.github.naoghuman.lib.tile.demo.images.ImagesLoader;
 import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundPresenter;
 import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundView;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.TilePresenter;
@@ -28,10 +29,12 @@ import com.github.naoghuman.lib.tile.demo.view.menu.tile.TileView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -59,7 +62,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         LoggerFacade.INSTANCE.info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
         
 //        assert (apView != null) : "fx:id=\"apView\" was not injected: check your FXML file 'Application.fxml'."; // NOI18N
-        
+
         this.initializeBackgroundImage();
         this.initializeMenuBackground();
         this.initializeMenuTile();
@@ -91,6 +94,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     private void initializeBackgroundImage() {
         LoggerFacade.INSTANCE.info(this.getClass(), "Initialize Background image"); // NOI18N
         
+        ivBackgroundImage.setImage(null);
         ivBackgroundImage.setFitWidth(1280.0d);
         ivBackgroundImage.setFitHeight(720.0d);
     }
@@ -157,17 +161,35 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         });
     }
     
-    private void onActionShowBackgroundImage(String url) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background image"); // NOI18N
+    private void onActionShowBackgroundImage(ProgressBar pbImageLoading, String url) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background image with url: " + url); // NOI18N
         
+        this.initializeBackgroundImage();
         try {
-            final Image image = new Image(url, 1280.0d, 720.0d, true, true);
+            final Image image = new Image(url, 1280.0d, 720.0d, true, true, true);
             ivBackgroundImage.setImage(image);
+            
+            // ImageLoadTracker.java
+            // https://gist.github.com/jewelsea/2556122
+            pbImageLoading.progressProperty().unbind();
+            pbImageLoading.progressProperty().bind(image.progressProperty());
+            image.errorProperty().addListener(new ChangeListener<Boolean>() {
+                @Override
+                public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                    if (newValue) {
+                        ivBackgroundImage.setFitWidth(256.0d);
+                        ivBackgroundImage.setFitHeight(256.0d);
+                        ivBackgroundImage.setImage(ImagesLoader.getDefault().loadCantLoadTheImage());
+                    }
+                }
+            });
         } catch (NullPointerException | IllegalArgumentException ex) {
             LoggerFacade.INSTANCE.error(this.getClass(), 
                     "Can't load the Background image with the URL: " + url, ex); // NOI18N
             
-            this.onActionResetBackgroundImage();
+            ivBackgroundImage.setFitWidth(256.0d);
+            ivBackgroundImage.setFitHeight(256.0d);
+            ivBackgroundImage.setImage(ImagesLoader.getDefault().loadCantLoadTheImage());
         }
     }
     
@@ -239,8 +261,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
                 ON_ACTION__SHOW_BACKGROUND_IMAGE,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
+                    final ProgressBar pbImageLoading = (ProgressBar) data.getObject();
                     final String url = data.getString();
-                    this.onActionShowBackgroundImage(url);
+                    this.onActionShowBackgroundImage(pbImageLoading, url);
                 });
     }
 
