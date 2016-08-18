@@ -25,14 +25,19 @@
                     <panes>
                         <TitledPane fx:id="tpBackground" expanded="true" text="Background">
                             <content>
-                                <BorderPane fx:id="bpBackground" />
+                                <BorderPane fx:id="bpMenuBackground" />
                             </content>
                         </TitledPane>
                         <TitledPane fx:id="tpTile" expanded="false" text="Tile">
                             <content>
-                                <BorderPane fx:id="bpTile" />
+                                <BorderPane fx:id="bpMenuTile" />
                             </content>
                         </TitledPane>
+                  <TitledPane expanded="false" prefHeight="200.0" prefWidth="200.0" text="About">
+                     <content>
+                        <BorderPane fx:id="bpMenuAbout" />
+                     </content>
+                  </TitledPane>
                     </panes>
                 </Accordion>
             </children>

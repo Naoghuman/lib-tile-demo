@@ -22,6 +22,7 @@ import com.github.naoghuman.lib.action.api.TransferData;
 import com.github.naoghuman.lib.logger.api.LoggerFacade;
 import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
 import com.github.naoghuman.lib.tile.demo.images.ImagesLoader;
+import com.github.naoghuman.lib.tile.demo.view.menu.about.AboutView;
 import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundPresenter;
 import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundView;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.TilePresenter;
@@ -51,8 +52,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     
     @FXML private AnchorPane apBackground;
     @FXML private AnchorPane apTileBackground;
-    @FXML private BorderPane bpBackground;
-    @FXML private BorderPane bpTile;
+    @FXML private BorderPane bpMenuAbout;
+    @FXML private BorderPane bpMenuBackground;
+    @FXML private BorderPane bpMenuTile;
     @FXML private ImageView ivBackgroundImage;
     @FXML private TitledPane tpBackground;
     @FXML private TitledPane tpTile;
@@ -64,6 +66,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
 //        assert (apView != null) : "fx:id=\"apView\" was not injected: check your FXML file 'Application.fxml'."; // NOI18N
 
         this.initializeBackgroundImage();
+        this.initializeMenuAbout();
         this.initializeMenuBackground();
         this.initializeMenuTile();
         this.initializeTitledPaneTile();
@@ -98,6 +101,14 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         ivBackgroundImage.setFitWidth(1280.0d);
         ivBackgroundImage.setFitHeight(720.0d);
     }
+    
+    private void initializeMenuAbout() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize menu About"); // NOI18N
+        
+        final AboutView view = new AboutView();
+        
+        bpMenuAbout.setCenter(view.getView());
+    }
 
     private void initializeMenuBackground() {
         LoggerFacade.INSTANCE.info(this.getClass(), "Initialize menu Background"); // NOI18N
@@ -106,7 +117,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         final BackgroundPresenter presenter = view.getRealPresenter();
         presenter.registerActions();
         
-        bpBackground.setCenter(view.getView());
+        bpMenuBackground.setCenter(view.getView());
     }
 
     private void initializeMenuTile() {
@@ -116,7 +127,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         final TilePresenter presenter = view.getRealPresenter();
         presenter.registerActions();
         
-        bpTile.setCenter(view.getView());
+        bpMenuTile.setCenter(view.getView());
     }
     
     private void onActionResetBackgroundColor() {

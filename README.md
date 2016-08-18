@@ -36,6 +36,7 @@ Content
       [_Background Color_](#BaCo)
     - [TitledPane Tile](#TiPaTi)  
       [_Transparent Textures_](#TrTe)
+    - [TitledPane About](#TiPaAb)
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
@@ -113,6 +114,17 @@ TODO
 TODO
 
 
+<br />
+### TitledPane About<a name="TiPaAb" />
+
+The [TitledPane] `About` show informations like description, autor, webpage, 
+license about the project `Lib-Tile-Demo`, the [Transparent Textures] and the 
+used icons in this application.
+
+_Image:_ TitledPane About  
+![titledpane-about.png][titledpane-about]
+
+
 
 <br />
 License<a name="License" />
@@ -142,6 +154,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
+[titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17784549/377271a6-657d-11e6-85f1-7805c5bcd749.png
 
 
 
@@ -157,3 +170,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Seb Jachec]:http://twitter.com/iamsebj
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
+[Transparent Textures]:https://www.transparenttextures.com/
