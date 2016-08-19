@@ -67,7 +67,6 @@ With the [TextField] `Background image` the developer have the option to load
 an optional background image from the internet. Momentary only images from the 
 internet are accepted. The loaded image will be `resized` to 1280x720.
 
-<br />
 _For example:_  
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
@@ -84,7 +83,6 @@ _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;
 <br />
 Clicking the button `Reset` removes the background image and clears the [TextField].
 
-<br />
 > __Hint__  
 > For a future version I plan the option that the developer can also choose local 
 > stored images via a [FileChooser].
@@ -95,7 +93,6 @@ Clicking the button `Reset` removes the background image and clears the [TextFie
 In the case that it shouldn't be possible to load an [Image] into the demo 
 application a `can't load background image` will be shown:
 
-<br />
 _Image:_ Can't load Background Image  
 ![cant-load-background-image.png][cant-load-background-image]
 
@@ -104,7 +101,6 @@ _Image:_ Can't load Background Image
 
 Momentary it's only possible to choose a `single` color over the [ColorPicker].
 
-<br />
 _Image:_ ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
@@ -112,7 +108,6 @@ _Image:_ ColorPicker
 Clicking the button `Reset` reset the background color to the default color 
 [AQUAMARINE].
 
-<br />
 > __Hint__  
 > For a future version I plan to implement the option that the developer have the 
 > option to define a [LinearGradient] or a [RadialGradient] colors as a 
