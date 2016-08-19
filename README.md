@@ -59,7 +59,6 @@ library [Lib-Tile] and its containing sub-libraries which are momentary
 Over the [TitledPane] `Background` you can tweak the background image and / or 
 the background color from the application.
 
-
 <br />
 ### _Background Image_<a name="BaIm" />
 
@@ -117,13 +116,53 @@ Clicking the button `Reset` reset the background color to the default color
 <br />
 ### TitledPane Tile<a name="TiPaTi" />
 
-TODO
+The [TitledPane] `Tile` allowed you to choose a [Tile] from one of the available 
+tilesets. Momentary only the [Transparent Textures] tiles are available.
 
+> __Reminder__  
+> A [Tile] is per definition a little transparent [Image] which overlay a 
+> background-color or -image with the help of repetitions from the image in a 
+> layer.
 
 <br />
 ### _Transparent Textures_<a name="TrTe" />
 
-TODO
+The [Transparent Textures] tiles are from the webpage https://www.transparenttextures.com/ 
+and are free to use. Momentary there are `396` tiles in the demo application available.
+
+The tiles are loaded with the help through the enum [TransparentTexturesTile] 
+from the library [Lib-Tile-TransparentTextures].
+
+_Enum_ TransparentTexturesTile
+```Java
+/**
+ * The <code>enum</code> TransparentTexturesTile is a collection from 
+ * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
+ * <code>Tileset</code> from the internet page https://www.transparenttextures.com/.
+ * <p />
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
+ * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader} 
+ * from the associated library <code>Lib-Tile-TransparentTextures-Images</code>.
+ *
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
+ */
+public enum TransparentTexturesTile implements Tile {
+```
+
+<br />
+_Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
+_Tile:_ Subtle White Feathers by Viahorizon  
+![demo-application-modified2.png][demo-application-modified2]
+
+> __Hint__  
+> The background image is taken from https://wall.alphacoders.com/big.php?i=723891 
+> and is under the license from CCO Public Domain Image. Big thanks to the autor for 
+> his great work :smiley:.  
+> The tile image is taken from https://www.transparenttextures.com/ and is free 
+> to use. Big thanks to the autor for his great work :smiley:. 
+
 
 
 <br />
@@ -166,6 +205,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [cant-load-background-image]:https://cloud.githubusercontent.com/assets/8161815/17814287/75c4604c-662f-11e6-8343-1f3aa844c5e6.png
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
+[demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/17816937/fbc190d2-663b-11e6-951b-5c9aedabc99a.png
 [loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17816075/99caeba2-6637-11e6-9b2e-b45dfe86057c.png
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17784549/377271a6-657d-11e6-85f1-7805c5bcd749.png
@@ -180,9 +220,12 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [Seb Jachec]:http://twitter.com/iamsebj
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
+[Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
 [Transparent Textures]:https://www.transparenttextures.com/
+[TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
