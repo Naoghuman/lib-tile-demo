@@ -65,7 +65,7 @@ the background color from the application.
 
 With the [TextField] `Background image` the developer have the option to load 
 an optional background image from the internet. Momentary only images from the 
-internet are accepted with the size from 1280x720.
+internet are accepted. The loaded image will be `resized` to 1280x720.
 
 _For example:_  
 * TODO add example link
