@@ -33,6 +33,7 @@ Content
 * [Features](#Features)
     - [TitledPane Background](#TiPaBa)  
       [_Background Image_](#BaIm)  
+      [_Can't load Background Image_](#CaLoBaIm)  
       [_Background Color_](#BaCo)
     - [TitledPane Tile](#TiPaTi)  
       [_Transparent Textures_](#TrTe)
@@ -81,6 +82,16 @@ from the [TextField].
 _Hint:_  
 For a future version I plan the option that the developer can also choose local 
 stored images via a [FileChooser].
+
+<br />
+### _Can't load Background Image_<a name="CaLoBaIm" />
+
+In the case that it shouldn't be possible to load an [Image] into the demo 
+application a `can't load background image` will be shown:
+
+<br />
+_Image:_ Can't load Background Image  
+![cant-load-background-image.png][cant-load-background-image]
 
 <br />
 ### _Background Color_<a name="BaCo" />
@@ -151,9 +162,10 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
+[cant-load-background-image]:https://cloud.githubusercontent.com/assets/8161815/17814287/75c4604c-662f-11e6-8343-1f3aa844c5e6.png
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
+[open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17784549/377271a6-657d-11e6-85f1-7805c5bcd749.png
 
 
@@ -163,6 +175,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
 [FileChooser]:https://docs.oracle.com/javase/8/javafx/api/javafx/stage/FileChooser.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
+[Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
