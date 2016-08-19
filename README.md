@@ -72,8 +72,8 @@ _For example:_
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
 <br />
-_Image:_ Crimson Night &#040;Dark / Landscape&#041;  
-![crimson-night.png][crimson-night]
+_Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;  
+![loaded-crimson-night.png][loaded-crimson-night]
 
 > __Hint__  
 > This image is from the webpage https://wall.alphacoders.com. The image haven't 
@@ -170,9 +170,9 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Images)
 [cant-load-background-image]:https://cloud.githubusercontent.com/assets/8161815/17814287/75c4604c-662f-11e6-8343-1f3aa844c5e6.png
-[crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
+[loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17816075/99caeba2-6637-11e6-9b2e-b45dfe86057c.png
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17784549/377271a6-657d-11e6-85f1-7805c5bcd749.png
 
