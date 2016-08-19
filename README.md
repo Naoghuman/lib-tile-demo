@@ -97,7 +97,8 @@ _Image:_ Can't load Background Image
 
 > __Hint__  
 > The image is taken from https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon 
-> and under the license: Creative Commons Attribution-No Derivative Works 3.0 Unported
+> and under the license: Creative Commons Attribution-No Derivative Works 3.0 
+> Unported. Thanks for the great work :smiley:.
 
 <br />
 ### _Background Color_<a name="BaCo" />
