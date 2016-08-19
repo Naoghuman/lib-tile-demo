@@ -71,7 +71,6 @@ internet are accepted. The loaded image will be `resized` to 1280x720.
 _For example:_  
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
-<br />
 _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;  
 ![loaded-crimson-night.png][loaded-crimson-night]
 
@@ -86,9 +85,9 @@ _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;
 Clicking the button `Reset` removes the background image and clears the [TextField].
 
 <br />
-_Hint:_  
-For a future version I plan the option that the developer can also choose local 
-stored images via a [FileChooser].
+> __Hint__  
+> For a future version I plan the option that the developer can also choose local 
+> stored images via a [FileChooser].
 
 <br />
 ### _Can't load Background Image_<a name="CaLoBaIm" />
@@ -114,10 +113,10 @@ Clicking the button `Reset` reset the background color to the default color
 [AQUAMARINE].
 
 <br />
-_Hint:_  
-For a future version I plan to implement the option that the developer have the 
-option to define a [LinearGradient] or a [RadialGradient] colors as a 
-background color through `css` styling &#040;[JavaFX CSS Reference Guide]&#041;.
+> __Hint__  
+> For a future version I plan to implement the option that the developer have the 
+> option to define a [LinearGradient] or a [RadialGradient] colors as a 
+> background color through `css` styling &#040;[JavaFX CSS Reference Guide]&#041;.
 
 
 <br />
