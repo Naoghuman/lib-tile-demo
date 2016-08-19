@@ -67,16 +67,23 @@ With the [TextField] `Background image` the developer have the option to load
 an optional background image from the internet. Momentary only images from the 
 internet are accepted. The loaded image will be `resized` to 1280x720.
 
+<br />
 _For example:_  
-* TODO add example link
+* https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
 <br />
-_Image:_ TODO add image description  
-TODO add image
+_Image:_ Crimson Night &#040;Dark / Landscape&#041;  
+![crimson-night.png][crimson-night]
+
+> __Hint__  
+> This image is from the webpage https://wall.alphacoders.com. The image haven't 
+> neither a `created by` or `shared by` flag &#040;see http://alphacoders.com/site/faq &#041;. 
+> If anyone is the autor and won't that I use this image here in my open souce 
+> project plz send me an email &#040;see [Contact](#Contact)&#041; and I will 
+> remove it. Thanks for your great work :smiley:.
 
 <br />
-Clicking the button `Reset` removes the background image and clears the content 
-from the [TextField].
+Clicking the button `Reset` removes the background image and clears the [TextField].
 
 <br />
 _Hint:_  
@@ -163,6 +170,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Images)
 [cant-load-background-image]:https://cloud.githubusercontent.com/assets/8161815/17814287/75c4604c-662f-11e6-8343-1f3aa844c5e6.png
+[crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
