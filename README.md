@@ -38,6 +38,9 @@ Content
     - [TitledPane Tile](#TiPaTi)  
       [_Transparent Textures_](#TrTe)
     - [TitledPane About](#TiPaAb)
+* [Requirements](#Requirements)
+* [Installation](#Installation)
+* [Contribution](#Contribution)
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
@@ -183,6 +186,34 @@ _Image:_ TitledPane About
 
 
 <br />
+Requirements<a name="Requirements" />
+---
+
+* On your system you need [JRE 8] or [JDK 8] installed.
+* You should have downloaded the game :smiley:.
+
+
+
+<br />
+Installation<a name="Installation" />
+---
+
+* Current version is [Lib-Tile-Demo v0.1.0] &#040;08.2016&#041;.
+* Download it and unzip the folder to a place of your choose.
+* Doubleclick the jar file inside the folder and have fun :smiley:.
+
+
+
+<br />
+Contribution<a name="Contribution" />
+---
+
+* If you find a `Bug` I will be glad if you will report an [Issue].
+* If you want to contribute to the project plz fork the project and do a [Pull Request].
+
+
+
+<br />
 License<a name="License" />
 ---
 
@@ -223,10 +254,15 @@ You can reach me under <peter.rogge@yahoo.de>.
 [FileChooser]:https://docs.oracle.com/javase/8/javafx/api/javafx/stage/FileChooser.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
+[Issue]:https://github.com/Naoghuman/Lib-Tile-Demo/issues
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
+[JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+[JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Lib-Tile-Demo v0.1.0]:https://github.com/Naoghuman/lib-tile-demo/releases
 [Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
+[Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [Seb Jachec]:http://twitter.com/iamsebj
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
