@@ -95,6 +95,10 @@ application a `can't` load background image will be shown:
 _Image:_ Can't load Background Image  
 ![cant-load-background-image.png][cant-load-background-image]
 
+> __Hint__  
+> The image is taken from https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon 
+> and under the license: Creative Commons Attribution-No Derivative Works 3.0 Unported
+
 <br />
 ### _Background Color_<a name="BaCo" />
 
