@@ -67,7 +67,7 @@ With the [TextField] `Background image` the developer have the option to load
 an optional background image from the internet. Momentary only images from the 
 internet are accepted. The loaded image will be `resized` to 1280x720.
 
-_For example:_  
+For example use this link in the application:  
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
 _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;  
@@ -91,7 +91,7 @@ Clicking the button `Reset` removes the background image and clears the [TextFie
 ### _Can't load Background Image_<a name="CaLoBaIm" />
 
 In the case that it shouldn't be possible to load an [Image] into the demo 
-application a `can't load background image` will be shown:
+application a `can't` load background image will be shown:
 
 _Image:_ Can't load Background Image  
 ![cant-load-background-image.png][cant-load-background-image]
