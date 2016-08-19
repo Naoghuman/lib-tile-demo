@@ -190,7 +190,7 @@ Requirements<a name="Requirements" />
 ---
 
 * On your system you need [JRE 8] or [JDK 8] installed.
-* You should have downloaded the game :smiley:.
+* You should have downloaded the demo application :smiley:.
 
 
 
