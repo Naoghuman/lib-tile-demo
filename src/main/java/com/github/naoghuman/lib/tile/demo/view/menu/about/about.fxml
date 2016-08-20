@@ -27,7 +27,7 @@
                         <Insets left="14.0" />
                     </VBox.margin>
                 </Label>
-                <Label text="0.1.0" />
+                <Label text="0.2.0-SNAPSHOT" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
