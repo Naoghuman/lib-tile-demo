@@ -9,117 +9,117 @@
 <?import javafx.scene.layout.*?>
 
 <VBox id="VBox" prefHeight="400.0" prefWidth="284.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.naoghuman.lib.tile.demo.view.menu.about.AboutPresenter">
-   <children>
-      <Label text="Lib-Tile-Demo" underline="true">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label text="Lib-Tile-Demo is a 'demonstration' application to show the features from the project Lib-Tile and it's included sublibraries 'lib-tile-core', 'lib-tile-transparenttextures' and 'lib-tile-transparenttextures-images'." wrapText="true">
-         <VBox.margin>
-            <Insets bottom="7.0" left="14.0" />
-         </VBox.margin>
-      </Label>
-      <HBox>
-         <children>
-            <Label prefWidth="56.0" text="Version:">
-               <VBox.margin>
-                  <Insets left="14.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="0.1.0-SNAPSHOT" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox>
-         <children>
-            <Label prefWidth="56.0" text="Autor:">
-               <VBox.margin>
-                  <Insets left="14.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="Naoghuman (Peter Rogge)" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox>
-         <children>
-            <Label prefWidth="56.0" text="License:" />
-            <Label text="GNU General Public License Version 3" wrapText="true" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox>
-         <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
-            <Label text="https://github.com/Naoghuman/lib-tile-demo" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <Label text="Transparent Textures" underline="true">
-         <VBox.margin>
-            <Insets top="14.0" />
-         </VBox.margin>
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label text="Standing on the shoulders of Subtle Patterns. Built and maintained by @mikehearn." wrapText="true">
-         <VBox.margin>
-            <Insets bottom="7.0" left="14.0" />
-         </VBox.margin>
-      </Label>
-      <HBox>
-         <children>
-            <Label prefWidth="56.0" text="License:" />
-            <Label text="Free to use" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox>
-         <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
-            <Label text="https://www.transparenttextures.com/" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <Label text="Cancel Icon" underline="true">
-         <VBox.margin>
-            <Insets top="14.0" />
-         </VBox.margin>
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <HBox>
-         <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="License:" />
-            <Label text="Creative Commons Attribution-No Derivative Works 3.0 Unported" wrapText="true" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox>
-         <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
-            <Label text="https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon" wrapText="true" />
-         </children>
-         <VBox.margin>
-            <Insets left="14.0" />
-         </VBox.margin>
-      </HBox>
-   </children>
+    <children>
+        <Label text="Lib-Tile-Demo" underline="true">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label text="Lib-Tile-Demo is a 'demonstration' application to show the features from the project Lib-Tile and it's included sublibraries 'lib-tile-core', 'lib-tile-transparenttextures' and 'lib-tile-transparenttextures-images'." wrapText="true">
+            <VBox.margin>
+                <Insets bottom="7.0" left="14.0" />
+            </VBox.margin>
+        </Label>
+        <HBox>
+            <children>
+                <Label prefWidth="56.0" text="Version:">
+                    <VBox.margin>
+                        <Insets left="14.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="0.1.0" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label prefWidth="56.0" text="Autor:">
+                    <VBox.margin>
+                        <Insets left="14.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="Naoghuman (Peter Rogge)" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label prefWidth="56.0" text="License:" />
+                <Label text="GNU General Public License Version 3" wrapText="true" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
+                <Label text="https://github.com/Naoghuman/lib-tile-demo" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <Label text="Transparent Textures" underline="true">
+            <VBox.margin>
+                <Insets top="14.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label text="Standing on the shoulders of Subtle Patterns. Built and maintained by @mikehearn." wrapText="true">
+            <VBox.margin>
+                <Insets bottom="7.0" left="14.0" />
+            </VBox.margin>
+        </Label>
+        <HBox>
+            <children>
+                <Label prefWidth="56.0" text="License:" />
+                <Label text="Free to use" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
+                <Label text="https://www.transparenttextures.com/" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <Label text="Cancel Icon" underline="true">
+            <VBox.margin>
+                <Insets top="14.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <HBox>
+            <children>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="License:" />
+                <Label text="Creative Commons Attribution-No Derivative Works 3.0 Unported" wrapText="true" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox>
+            <children>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
+                <Label text="https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon" wrapText="true" />
+            </children>
+            <VBox.margin>
+                <Insets left="14.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
 </VBox>

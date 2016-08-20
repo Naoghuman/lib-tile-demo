@@ -11,7 +11,7 @@ This project is a `demonstration` application to show the features from the
 project [Lib-Tile] and it's included sublibraries `lib-tile-core`, 
 `lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
 
-The current `version` is `0.1.0` from MM.dd.2016.
+The current `version` is `0.1.0` from 08.20.2016.
 
 <br />
 _Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
@@ -500,7 +500,7 @@ Requirements<a name="Requirements" />
 Installation<a name="Installation" />
 ---
 
-* Current version is [Lib-Tile-Demo v0.1.0] &#040;08.2016&#041;.
+* Current version is [Lib-Tile-Demo v0.1.0] &#040;08.20.2016&#041;.
 * Download it and unzip the folder to a place of your choose.
 * Doubleclick the jar file inside the folder and have fun :smiley:.
 
