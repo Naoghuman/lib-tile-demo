@@ -3,6 +3,7 @@ Lib-Tile-Demo
 
 
 
+<br />
 Intention
 ---
 
@@ -22,7 +23,18 @@ _Tile:_ Blu Stripes made by [Seb Jachec]
 > and is under the license from CCO Public Domain Image. Big thanks to the autor for 
 > his great work :smiley:.  
 > The tile image is taken from https://www.transparenttextures.com/ and is free 
-> to use. Big thanks to the autor for his great work :smiley:.  
+> to use. Big thanks to the autor for his great work :smiley:.
+
+<br />
+The demo application is build with the `Project-Template-afterburnerfx-Naoghuman` 
+from my project [Project-Templates].
+
+> __Project description:__  
+> `Project-Templates` contains predefined `JavaFX` & `Maven` projects with 
+> `afterburner.fx` and optional my own libraries. For example: [Lib-Action], 
+> [Lib-Logger] and more.
+
+Please have a look for more information in the project README [Project-Templates].
 
 
 
@@ -258,10 +270,13 @@ You can reach me under <peter.rogge@yahoo.de>.
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+[Lib-Action]:https://github.com/Naoghuman/lib-action
+[Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Lib-Tile-Demo v0.1.0]:https://github.com/Naoghuman/lib-tile-demo/releases
 [Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
+[Project-Templates]:https://github.com/Naoghuman/Project-Templates
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
 [Seb Jachec]:http://twitter.com/iamsebj
