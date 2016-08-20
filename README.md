@@ -256,7 +256,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/17816937/fbc190d2-663b-11e6-951b-5c9aedabc99a.png
 [loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17816075/99caeba2-6637-11e6-9b2e-b45dfe86057c.png
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
-[titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17784549/377271a6-657d-11e6-85f1-7805c5bcd749.png
+[titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17829543/22b311f4-66b2-11e6-8f51-27d7b77871ef.png
 
 
 
