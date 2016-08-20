@@ -45,7 +45,7 @@ Content
 * [Features](#Features)
     - [TitledPane Background](#TiPaBa)  
       [_Background Image_](#BaIm)  
-      [_Can't load Background Image_](#CaLoBaIm)  
+      _Error:_ [_Can't load Background Image_](#CaLoBaIm)  
       [_Background Color_](#BaCo)
     - [TitledPane Tile](#TiPaTi)  
       [_Transparent Textures_](#TrTe)
@@ -102,10 +102,10 @@ Clicking the button `Reset` removes the background image and clears the [TextFie
 > stored images via a [FileChooser].
 
 <br />
-### _Can't load Background Image_<a name="CaLoBaIm" />
+### _Error: Can't load Background Image_<a name="CaLoBaIm" />
 
-In the case that it shouldn't be possible to load an [Image] into the demo 
-application a `can't` load background image will be shown:
+In the case that its shouldn't be possible to load an [Image] into the demo 
+application a special image will be shown to signal that something goes wrong:
 
 _Image:_ Can't load Background Image  
 ![cant-load-background-image.png][cant-load-background-image]
