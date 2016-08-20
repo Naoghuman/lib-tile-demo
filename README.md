@@ -29,7 +29,7 @@ _Tile:_ Blu Stripes made by [Seb Jachec]
 The demo application is build with the `Project-Template-afterburnerfx-Naoghuman` 
 from my project [Project-Templates].
 
-> __Project description:__  
+> __Description:__  
 > `Project-Templates` contains predefined `JavaFX` & `Maven` projects with 
 > `afterburner.fx` and optional my own libraries. For example: [Lib-Action], 
 > [Lib-Logger] and more.
@@ -42,6 +42,11 @@ Please have a look for more information in the project README [Project-Templates
 Content
 ---
 
+* [Demonstration](#Demonstration)
+    - [Project Lib-Tile](#LiTi)  
+      _Library_ [_Lib-Tile-Core_](#LiTiCo)  
+      _Library_ [_Lib-Tile-TransparentTextures_](#LiTiTr)  
+      _Library_ [_Lib-Tile-TransparentTextures-Images_](#LiTiTrIm)
 * [Features](#Features)
     - [TitledPane Background](#TiPaBa)  
       [_Background Image_](#BaIm)  
@@ -56,6 +61,291 @@ Content
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
+
+
+
+<br />
+Demonstration<a name="Demonstration" />
+---
+
+Like I said in the section `Intention` this application is a `demonstration` to 
+show the features from the project [Lib-Tile] and it's included sublibraries 
+`lib-tile-core`, `lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
+
+
+<br />
+### Project Lib-Tile<a name="LiTi" />
+
+`Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 8.0.2 
+and provides the functionalities to use and handle easily [Tile]s in your [JavaFX] 
+application.
+
+A [Tile] is per definition a little transparent [Image] which overlay a 
+background-color or -image with the help of repetitions from the image in a layer.
+
+<br />
+_Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
+
+> __Hint__  
+> Normally only one [Tile] can shown simultaneously. For demonstration purpose 
+> I have merge different [Tile]s in one picture.
+
+![different-tile-images.png][different-tile-images]
+
+> __Hint__  
+> This image is from the webpage https://wall.alphacoders.com. The image haven't 
+> neither a `created by` or `shared by` flag &#040;see http://alphacoders.com/site/faq &#041;. 
+> If anyone is the autor and won't that I use this image here in my open souce 
+> project plz send me an email &#040;see [Contact](#Contact)&#041; and I will 
+> remove it. Thanks for your great work :smiley:.
+
+For more information plz see [Lib-Tile].
+
+<br />
+### _Library Lib-Tile-Core_<a name="LiTiCo" />
+
+The library `Lib-Tile-Core` provides the main functionalities to load a [Tile] 
+as a [Background] or an [Image] with a concrete implementation from the interface 
+[AbstractTileLoader].
+
+<br />
+Interface [AbstractTileLoader]
+```java
+/**
+ * This interface defines the minimal functionalities which should be supported 
+ * by an <code>AbstractTileLoader</code>. With a concrete implementation from 
+ * this <code>Interface</code> a developer is then be able to load a 
+ * {@link com.github.naoghuman.lib.tile.core.Tile} as a 
+ * {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ *
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see javafx.scene.layout.Background
+ * @see javafx.scene.image.Image
+ */
+public interface AbstractTileLoader {
+
+    /**
+     * The parameter <code>prefix</code> defines if the 
+     * {@link com.github.naoghuman.lib.tile.core.Tile} is supported by this 
+     * <code>AbstractTileLoader</code> or not.
+     *
+     * @return the prefix which defines if the {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * is supported or not by this <code>AbstractTileLoader</code>.
+     * @see com.github.naoghuman.lib.tile.core.Tile
+     */
+    public String getPrefix();
+
+    /**
+     * Checks the given {@link com.github.naoghuman.lib.tile.core.Tile} if it's 
+     * supported by this <code>AbstractTileLoader</code>.
+     * 
+     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which should 
+     * be checked if it's supported by this <code>AbstractTileLoader</code> or not.
+     * @return <code>true</code> if the {@link com.github.naoghuman.lib.tile.core.Tile} 
+     * is supported by this <code>AbstractTileLoader</code>, otherwise <code>false</code>.
+     * @see com.github.naoghuman.lib.tile.core.Tile
+     */
+    public boolean isSupported(Tile tile);
+
+    /**
+     * Loads an {@link javafx.scene.image.Image} with a concrete implementation 
+     * from this <code>Interface</code> and the given {@link com.github.naoghuman.lib.tile.core.Tile}. 
+     * Then the {@link javafx.scene.image.Image} will be converted to a 
+     * {@link javafx.scene.layout.Background} and returned.
+     * <p />
+     * This method delegates to the method 
+     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(AbstractTileLoader, Tile)}
+     * with the concrete implementation from an <code>AbstractTileLoader</code>.<br />
+     * See for example the method 
+     * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)} 
+     * in the library <code>Lib-Tile-TransparentTextures-Images</code>.
+     * 
+     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which 
+     * should be loaded as a {@link javafx.scene.layout.Background}.
+     * @return the loaded {@link javafx.scene.layout.Background}.
+     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsBackground(AbstractTileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.Tile
+     * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsBackground(Tile)
+     * @see javafx.scene.layout.Background
+     * @see javafx.scene.image.Image
+     */
+    public Background loadAsBackground(Tile tile);
+    
+    /**
+     * Loads an {@link javafx.scene.image.Image} with a concrete implementation 
+     * from this <code>Interface</code> and the given {@link com.github.naoghuman.lib.tile.core.Tile}.
+     * <p />
+     * This method delegates to the method 
+     * {@link com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(AbstractTileLoader, Tile)}
+     * with the concrete implementation from an <code>AbstractTileLoader</code>.<br />
+     * See for example the method 
+     * {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)}
+     * in the library <code>Lib-Tile-TransparentTextures-Images</code>.
+     * 
+     * @param tile the {@link com.github.naoghuman.lib.tile.core.Tile} which 
+     * should be loaded as a {@link javafx.scene.image.Image}.
+     * @return the loaded {@link javafx.scene.image.Image}.
+     * @see com.github.naoghuman.lib.tile.core.DefaultTileLoader#loadAsImage(AbstractTileLoader, Tile)
+     * @see com.github.naoghuman.lib.tile.core.Tile
+     * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader#loadAsImage(Tile)
+     * @see javafx.scene.image.Image
+     */
+    public Image loadAsImage(Tile tile);
+    
+}
+```
+
+<br />
+For more informations and examples plz see [Lib-Tile-Core].
+
+<br />
+### _Library Lib-Tile-TransparentTextures_<a name="LiTiTr" />
+
+With the library `Lib-Tile-TransparentTextures` the developer have access to the 
+tileset `Transparent Textures` from the internet page https://www.transparenttextures.com/ 
+through the enum `TransparentTexturesTile`. Momentary that are `396` [Tile]s.
+
+The tile images from this tileset are outsourced in a own library 
+`Lib-Tile-TransparentTextures-Images` to reduce the size from this library. One 
+more advance is that you can use an `own` [AbstractTileLoader] in combination 
+with the library `Lib-Tile-TransparentTextures`. So you don't need to include the 
+library `Lib-Tile-TransparentTextures-Images` into your project which size is 
+momenatry `13MB`.
+
+<br />
+Enum [TransparentTexturesTile]
+```java
+/**
+ * The <code>enum</code> TransparentTexturesTile is a collection from 
+ * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
+ * <code>Tileset</code> from the internet page https://www.transparenttextures.com/.
+ * <p />
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
+ * with the class {@link com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader} 
+ * from the associated library <code>Lib-Tile-TransparentTextures-Images</code>.
+ *
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
+ */
+public enum TransparentTexturesTile implements Tile {
+
+    /**
+     * The <code>Java</code> representation from the tile: 3Px Tile
+     */
+    TT_3PX_TILE("tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"), // NOI18N
+    
+    /**
+     * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
+     */
+    TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"), // NOI18N
+    
+    ...
+
+    TransparentTexturesTile(
+            final String name, final String header,
+            final double width, final double height,
+            final String autor
+    ) {
+        this(name, header, width, height, autor, ""); // NOI18N
+    }
+
+    TransparentTexturesTile(
+            final String imageName, final String title,
+            final double width, final double height,
+            final String autor, final String autorUrl
+    ) {
+        this.imageName = imageName;
+        this.title = title;
+        this.width = width;
+        this.height = height;
+        this.autor = autor;
+        this.autorUrl = autorUrl;
+    }
+
+    ...
+}
+```
+
+<br />
+For more informations and examples plz see [Lib-Tile-TransparentTextures].
+
+<br />
+### _Library Lib-Tile-TransparentTextures-Images_<a name="LiTiTrIm" />
+
+The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
+tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader] 
+which allowed the developer to load a [Tile] image from the enum 
+[TransparentTexturesTile].
+
+<br />
+Class [TransparentTexturesTileLoader]
+```java
+/**
+ * The singleton <code>TransparentTexturesTileLoader</code> is a concrete 
+ * implementation from the interface {@link com.github.naoghuman.lib.tile.core.AbstractTileLoader}.
+ * <p />
+ * With this class it's possible to load a {@link com.github.naoghuman.lib.tile.core.Tile} 
+ * which must be defined in the enum 
+ * {@link com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile}
+ * as a {@link javafx.scene.layout.Background} or an {@link javafx.scene.image.Image}.
+ *
+ * @author Naoghuman
+ * @see com.github.naoghuman.lib.tile.core.AbstractTileLoader
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile
+ * @see javafx.scene.layout.Background
+ * @see javafx.scene.image.Image
+ */
+public final class TransparentTexturesTileLoader implements AbstractTileLoader {
+	
+    private static final Optional<TransparentTexturesTileLoader> instance = Optional.of(new TransparentTexturesTileLoader());
+
+    /**
+     * Returns a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
+     * 
+     * @return a singleton instance from the class <code>TransparentTexturesTileLoader</code>.
+     */
+    public static final TransparentTexturesTileLoader getDefault() {
+        return instance.get();
+    }
+
+    private TransparentTexturesTileLoader() {
+
+    }
+
+    @Override
+    public String getPrefix() {
+        return "tt-"; // NOI18N
+    }
+
+    @Override
+    public boolean isSupported(final Tile tile) {
+        final String name = tile.getImageName();
+        final boolean isSupported = 
+                (name != null)
+                && (!name.trim().isEmpty())
+                && (name.startsWith(this.getPrefix()));
+
+        return isSupported;
+    }
+
+    @Override
+    public Background loadAsBackground(final Tile tile) {
+        return DefaultTileLoader.getDefault().loadAsBackground(TransparentTexturesTileLoader.getDefault(), tile);
+    }
+
+    @Override
+    public Image loadAsImage(final Tile tile) {
+        return DefaultTileLoader.getDefault().loadAsImage(TransparentTexturesTileLoader.getDefault(), tile);
+    }
+
+}
+```
+
+<br />
+For more informations and examples plz see [Lib-Tile-TransparentTextures-Images].
 
 
 
@@ -254,6 +544,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
 [demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/17816937/fbc190d2-663b-11e6-951b-5c9aedabc99a.png
+[different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/17412537/8fd2c446-5a7d-11e6-82b2-34aca4f5f870.png
 [loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17816075/99caeba2-6637-11e6-9b2e-b45dfe86057c.png
 [open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
 [titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17829543/22b311f4-66b2-11e6-8f51-27d7b77871ef.png
@@ -261,21 +552,28 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Links)
+[AbstractTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/AbstractTileLoader.java
 [AQUAMARINE]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html#AQUAMARINE
+[Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
 [ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
 [FileChooser]:https://docs.oracle.com/javase/8/javafx/api/javafx/stage/FileChooser.html
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [Issue]:https://github.com/Naoghuman/Lib-Tile-Demo/issues
+[JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX CSS Reference Guide]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html
 [JDK 8]:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 [JRE 8]:http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 [Lib-Action]:https://github.com/Naoghuman/lib-action
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Lib-Tile-Core]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core
 [Lib-Tile-Demo v0.1.0]:https://github.com/Naoghuman/lib-tile-demo/releases
 [Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
+[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
+[Maven]:http://maven.apache.org/
+[NetBeans IDE]:https://netbeans.org/
 [Project-Templates]:https://github.com/Naoghuman/Project-Templates
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
@@ -285,3 +583,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
 [Transparent Textures]:https://www.transparenttextures.com/
 [TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
+[TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
