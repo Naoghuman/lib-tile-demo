@@ -49,11 +49,11 @@ Content
       _Library_ [_Lib-Tile-TransparentTextures-Images_](#LiTiTrIm)
 * [Features](#Features)
     - [TitledPane Background](#TiPaBa)  
-      [_Background Image_](#BaIm)  
-      _Error:_ [_Can't load Background Image_](#CaLoBaIm)  
-      [_Background Color_](#BaCo)
+      _Choose a_ [_Background Image_](#BaIm)  
+      _Feedback:_ [_Can't load Background Image_](#CaLoBaIm)  
+      _Choose a_ [_Background Color_](#BaCo)
     - [TitledPane Tile](#TiPaTi)  
-      [_Transparent Textures_](#TrTe)
+      _Tileset_ [_Transparent Textures_](#TrTe)
     - [TitledPane About](#TiPaAb)
 * [Requirements](#Requirements)
 * [Installation](#Installation)
@@ -365,7 +365,7 @@ Over the [TitledPane] `Background` you can tweak the background image and / or
 the background color from the application.
 
 <br />
-### _Background Image_<a name="BaIm" />
+### _Choose a Background Image_<a name="BaIm" />
 
 With the [TextField] `Background image` the developer have the option to load 
 an optional background image from the internet. Momentary only images from the 
@@ -392,7 +392,7 @@ Clicking the button `Reset` removes the background image and clears the [TextFie
 > stored images via a [FileChooser].
 
 <br />
-### _Error: Can't load Background Image_<a name="CaLoBaIm" />
+### _Feedback: Can't load Background Image_<a name="CaLoBaIm" />
 
 In the case that its shouldn't be possible to load an [Image] into the demo 
 application a special image will be shown to signal that something goes wrong:
@@ -406,7 +406,7 @@ _Image:_ Can't load Background Image
 > Unported. Thanks for the great work :smiley:.
 
 <br />
-### _Background Color_<a name="BaCo" />
+### _Choose a Background Color_<a name="BaCo" />
 
 Momentary it's only possible to choose a `single` color over the [ColorPicker].
 
@@ -435,7 +435,7 @@ tilesets. Momentary only the [Transparent Textures] tiles are available.
 > layer.
 
 <br />
-### _Transparent Textures_<a name="TrTe" />
+### _Tileset Transparent Textures_<a name="TrTe" />
 
 The [Transparent Textures] tiles are from the webpage https://www.transparenttextures.com/ 
 and are free to use. Momentary there are `396` tiles in the demo application available.
