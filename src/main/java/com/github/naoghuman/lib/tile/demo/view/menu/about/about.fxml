@@ -22,7 +22,7 @@
       </Label>
       <HBox>
          <children>
-            <Label prefWidth="56.0" text="Version">
+            <Label prefWidth="56.0" text="Version:">
                <VBox.margin>
                   <Insets left="14.0" />
                </VBox.margin>
@@ -35,7 +35,7 @@
       </HBox>
       <HBox>
          <children>
-            <Label prefWidth="56.0" text="By">
+            <Label prefWidth="56.0" text="Autor:">
                <VBox.margin>
                   <Insets left="14.0" />
                </VBox.margin>
@@ -48,7 +48,7 @@
       </HBox>
       <HBox>
          <children>
-            <Label prefWidth="56.0" text="License" />
+            <Label prefWidth="56.0" text="License:" />
             <Label text="GNU General Public License Version 3" wrapText="true" />
          </children>
          <VBox.margin>
@@ -57,7 +57,7 @@
       </HBox>
       <HBox>
          <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Project" />
+            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
             <Label text="https://github.com/Naoghuman/lib-tile-demo" />
          </children>
          <VBox.margin>
@@ -79,7 +79,7 @@
       </Label>
       <HBox>
          <children>
-            <Label prefWidth="56.0" text="License" />
+            <Label prefWidth="56.0" text="License:" />
             <Label text="Free to use" />
          </children>
          <VBox.margin>
@@ -88,7 +88,7 @@
       </HBox>
       <HBox>
          <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage" />
+            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
             <Label text="https://www.transparenttextures.com/" />
          </children>
          <VBox.margin>
@@ -105,7 +105,7 @@
       </Label>
       <HBox>
          <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="License" />
+            <Label minWidth="-Infinity" prefWidth="56.0" text="License:" />
             <Label text="Creative Commons Attribution-No Derivative Works 3.0 Unported" wrapText="true" />
          </children>
          <VBox.margin>
@@ -114,7 +114,7 @@
       </HBox>
       <HBox>
          <children>
-            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage" />
+            <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
             <Label text="https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon" wrapText="true" />
          </children>
          <VBox.margin>
