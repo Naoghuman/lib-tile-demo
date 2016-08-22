@@ -16,19 +16,36 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.menu.about;
 
+import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.properties.api.PropertiesFacade;
+import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  *
  * @author Naoghuman
  */
-public class AboutPresenter implements Initializable {
+public class AboutPresenter implements Initializable, IApplicationConfiguration {
+    
+    @FXML private Label lVersion;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize AboutPresenter"); // NOI18N
         
+        this.initializeLabelVersion();
+    }
+
+    private void initializeLabelVersion() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize label Version"); // NOI18N
+        
+        final String version = PropertiesFacade.INSTANCE.getProperty(
+                KEY__APPLICATION__RESOURCE_BUNDLE, KEY__APPLICATION__VERSION);
+        lVersion.setText(version);
     }
     
 }

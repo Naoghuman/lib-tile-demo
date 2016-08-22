@@ -27,7 +27,7 @@
                         <Insets left="14.0" />
                     </VBox.margin>
                 </Label>
-                <Label text="0.2.0-SNAPSHOT" />
+                <Label fx:id="lVersion" text="&lt;version&gt;" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
