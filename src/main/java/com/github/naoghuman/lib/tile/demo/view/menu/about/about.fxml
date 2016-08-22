@@ -95,7 +95,7 @@
                 <Insets left="14.0" />
             </VBox.margin>
         </HBox>
-        <Label text="Cancel Icon" underline="true">
+        <Label text="No Image Icon" underline="true">
             <VBox.margin>
                 <Insets top="14.0" />
             </VBox.margin>
