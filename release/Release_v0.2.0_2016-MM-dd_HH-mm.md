@@ -16,12 +16,13 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 
+#### Feature
+#2 [Background] Extend the options to create a Linear- or RadialGradient color as Background.
+
+
+
 #### Enhancement
 #4 [About] Read property 'version' from pom.xml and show it into TitledPane 'About'.
-
-
-
-#### Feature
 
 
 

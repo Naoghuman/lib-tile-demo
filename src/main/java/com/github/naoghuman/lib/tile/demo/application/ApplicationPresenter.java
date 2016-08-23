@@ -150,8 +150,8 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         apTileBackground.setBackground(null);
     }
     
-    private void onActionShowBackgroundColor(Color backgroundColor) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background color"); // NOI18N
+    private void onActionShowBackgroundSingleColor(Color backgroundColor) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background SingleColor"); // NOI18N
 
         Platform.runLater(() -> {
             final String _fx_base = "-fx-base: rgba("; // NOI18N
@@ -169,6 +169,21 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
 
             apBackground.setStyle(_fx_base + sb.toString()
                     + _fx_control_inner_background + sb.toString());
+        });
+    }
+    
+    private void onActionShowBackgroundXyGradient(String backgroundColor) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
+        
+        Platform.runLater(() -> {
+            final String _fx_base = "-fx-base: "; // NOI18N
+            final String _fx_background_color = "-fx-background-color: ";
+            final String _fx_control_inner_background = "-fx-control-inner-background: "; // NOI18N
+            
+            apBackground.setStyle(
+                    _fx_base + backgroundColor
+                    + _fx_background_color + backgroundColor
+                    + _fx_control_inner_background + backgroundColor);
         });
     }
     
@@ -218,7 +233,8 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         this.registerOnActionResetBackgroundImage();
         this.registerOnActionResetTileImage();
         
-        this.registerOnActionShowBackgroundColor();
+        this.registerOnActionShowBackgroundSingleColor();
+        this.registerOnActionShowBackgroundXyGradient();
         this.registerOnActionShowBackgroundImage();
         this.registerOnActionShowTileImage();
     }
@@ -253,15 +269,27 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
                 });
     }
     
-    private void registerOnActionShowBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background color"); // NOI18N
+    private void registerOnActionShowBackgroundSingleColor() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background SingleColor"); // NOI18N
         
         ActionFacade.INSTANCE.register(
-                ON_ACTION__SHOW_BACKGROUND_COLOR,
+                ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
                     final Color backgroundColor = (Color) data.getObject();
-                    this.onActionShowBackgroundColor(backgroundColor);
+                    this.onActionShowBackgroundSingleColor(backgroundColor);
+                });
+    }
+    
+    private void registerOnActionShowBackgroundXyGradient() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background XyGradient"); // NOI18N
+        
+        ActionFacade.INSTANCE.register(
+                ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT,
+                (ActionEvent event) -> {
+                    final TransferData data = (TransferData) event.getSource();
+                    final String backgroundColor = data.getString();
+                    this.onActionShowBackgroundXyGradient(backgroundColor);
                 });
     }
 

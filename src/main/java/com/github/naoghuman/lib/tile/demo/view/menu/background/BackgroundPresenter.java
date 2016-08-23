@@ -24,39 +24,52 @@ import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
 import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Color;
 
 /**
- * <ul>
- * <li>Open https://wall.alphacoders.com</li>
- * <li>Search for example -> landscape</li>
- * <li>Choose a wallpaper</li>
- * <li>Crop to 1280x720 (under -> More Resolustion -> 16:9)</li>
- * <li>Submit your changes</li>
- * <li>Copy the graphic address from the cropped image</li>
- * <li>Use the copied graphic address in the TextField</li>
- * </ul>
  * 
  * @author Naoghuman
  */
 public class BackgroundPresenter implements Initializable, IActionConfiguration, IRegisterActions {
     
+    @FXML private Button bResetSingleColor;
+    @FXML private Button bResetXyGradient;
+    @FXML private Button bShowXyGradient;
     @FXML private ColorPicker cpBackgroundColor;
     @FXML private ProgressBar pbImageLoading;
+    @FXML private TextArea taXyGrandient;
     @FXML private TextField tfUrlBackgroundImage;
+    @FXML private ToggleGroup tgColorMode;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LoggerFacade.INSTANCE.info(this.getClass(), "Initialize BackgroundPresenter"); // NOI18N
         
+        this.initializeColorComponents();
         this.initializeColorPickerForBackgroundColor();
         this.initializeTextFieldForBackgroundImage();
+    }
+    
+    private void initializeColorComponents() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize Color components"); // NOI18N
+        
+        cpBackgroundColor.setDisable(Boolean.FALSE);
+        bResetSingleColor.setDisable(Boolean.FALSE);
+        
+        taXyGrandient.setDisable(Boolean.TRUE);
+        bShowXyGradient.setDisable(Boolean.TRUE);
+        bResetXyGradient.setDisable(Boolean.TRUE);
     }
     
     private void initializeColorPickerForBackgroundColor() {
@@ -94,11 +107,47 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         ActionFacade.INSTANCE.handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
     }
     
+    public void onActionSelectSingleColor(ActionEvent event) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select Singlecolor"); // NOI18N
+        
+        if (!(event.getSource() instanceof RadioButton)) {
+            return;
+        }
+        
+        final RadioButton rb = (RadioButton) event.getSource();
+        final boolean isSelected = rb.isSelected();
+        
+        cpBackgroundColor.setDisable(!isSelected);
+        bResetSingleColor.setDisable(!isSelected);
+        
+        taXyGrandient.setDisable(isSelected);
+        bShowXyGradient.setDisable(isSelected);
+        bResetXyGradient.setDisable(isSelected);
+    }
+    
+    public void onActionSelectXyGradient(ActionEvent event) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select XyGradient"); // NOI18N
+        
+        if (!(event.getSource() instanceof RadioButton)) {
+            return;
+        }
+        
+        final RadioButton rb = (RadioButton) event.getSource();
+        final boolean isSelected = rb.isSelected();
+        
+        cpBackgroundColor.setDisable(isSelected);
+        bResetSingleColor.setDisable(isSelected);
+        
+        taXyGrandient.setDisable(!isSelected);
+        bShowXyGradient.setDisable(!isSelected);
+        bResetXyGradient.setDisable(!isSelected);
+    }
+    
     public void onActionShowBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background color"); // NOI18N
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select Background color"); // NOI18N
         
         final TransferData data = new TransferData();
-        data.setActionId(ON_ACTION__SHOW_BACKGROUND_COLOR);
+        data.setActionId(ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR);
         
         final Color backgroundColor = cpBackgroundColor.getValue();
         data.setObject(backgroundColor);
@@ -125,6 +174,27 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         data.setActionId(ON_ACTION__SHOW_BACKGROUND_IMAGE);
         data.setString(url);
         data.setObject(pbImageLoading);
+        
+        ActionFacade.INSTANCE.handle(data);
+    }
+    
+    public void onActionShowBackgroundXyGradient() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
+        
+        // Check backgroundColor
+        final String backgroundColor = taXyGrandient.getText();
+        if (
+                (backgroundColor == null)
+                || (backgroundColor.isEmpty())
+        ) {
+            return;
+        }
+        
+        
+        // Load new Background XyGradient
+        final TransferData data = new TransferData();
+        data.setActionId(ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT);
+        data.setString(backgroundColor);
         
         ActionFacade.INSTANCE.handle(data);
     }
