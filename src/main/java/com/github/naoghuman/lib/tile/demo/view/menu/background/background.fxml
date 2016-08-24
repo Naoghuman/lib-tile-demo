@@ -15,56 +15,57 @@
                 <Label text="Background image" />
                 <HBox spacing="7.0">
                     <children>
-                  <VBox spacing="7.0" HBox.hgrow="ALWAYS">
-                     <children>
-                              <TextField fx:id="tfUrlBackgroundImage" onAction="#onActionShowBackgroundImage" promptText="The image will be resized to 1280 x 720" />
-                        <ProgressBar fx:id="pbImageLoading" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="25.0" progress="0.0" style="-fx-padding: 0;">
-                           <padding>
-                              <Insets top="5.0" />
-                           </padding>
-                        </ProgressBar>
-                     </children>
-                  </VBox>
-                  <VBox spacing="7.0">
-                     <children>
-                              <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowBackgroundImage" prefWidth="64.0" text="Load" />
-                        <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundImage" prefWidth="64.0" text="Reset" />
-                     </children>
-                  </VBox>
+                        <VBox spacing="7.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <TextField fx:id="tfUrlBackgroundImage" onAction="#onActionShowBackgroundImage" promptText="The image will be resized to 1280 x 720" />
+                                <ProgressBar fx:id="pbImageLoading" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="25.0" progress="0.0" style="-fx-padding: 0;">
+                                    <padding>
+                                        <Insets top="5.0" />
+                                    </padding>
+                                </ProgressBar>
+                            </children>
+                        </VBox>
+                        <VBox spacing="7.0">
+                            <children>
+                                <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowBackgroundImage" prefWidth="64.0" text="Load" />
+                                <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundImage" prefWidth="64.0" text="Reset" />
+                            </children>
+                        </VBox>
                     </children>
                 </HBox>
             </children>
         </VBox>
-      <VBox spacing="2.0">
-         <children>
-            <Label text="Background color" />
-            <RadioButton mnemonicParsing="false" onAction="#onActionSelectSingleColor" selected="true" text="Colorchooser">
-               <toggleGroup>
-                  <ToggleGroup fx:id="tgColorMode" />
-               </toggleGroup></RadioButton>
-            <HBox spacing="7.0">
-               <children>
-                  <ColorPicker fx:id="cpBackgroundColor" maxWidth="1.7976931348623157E308" onAction="#onActionShowBackgroundColor" HBox.hgrow="ALWAYS" />
-                  <Button fx:id="bResetSingleColor" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundColor" prefWidth="64.0" text="Reset" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <VBox spacing="2.0">
-         <children>
-            <RadioButton mnemonicParsing="false" onAction="#onActionSelectXyGradient" text="Linear- and/or RadialGradient" toggleGroup="$tgColorMode" />
-            <HBox spacing="7.0">
-               <children>
-                  <TextArea fx:id="taXyGrandient" maxWidth="1.7976931348623157E308" prefHeight="150.0" HBox.hgrow="ALWAYS" />
-                  <VBox spacing="7.0">
-                     <children>
-                        <Button fx:id="bShowXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowBackgroundXyGradient" prefWidth="64.0" text="Show" />
-                        <Button fx:id="bResetXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundColor" prefWidth="64.0" text="Reset" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+        <VBox spacing="2.0">
+            <children>
+                <Label text="Background color" />
+                <RadioButton mnemonicParsing="false" onAction="#onActionSelectSingleColor" selected="true" text="Colorchooser">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="tgColorMode" />
+                    </toggleGroup>
+                </RadioButton>
+                <HBox spacing="7.0">
+                    <children>
+                        <ColorPicker fx:id="cpBackgroundColor" maxWidth="1.7976931348623157E308" onAction="#onActionShowBackgroundColor" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bResetSingleColor" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundColor" prefWidth="64.0" text="Reset" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox spacing="2.0">
+            <children>
+                <RadioButton mnemonicParsing="false" onAction="#onActionSelectXyGradient" text="Linear- and/or RadialGradient" toggleGroup="$tgColorMode" />
+                <HBox spacing="7.0">
+                    <children>
+                        <TextArea fx:id="taXyGrandient" maxWidth="1.7976931348623157E308" prefHeight="150.0" promptText="Use the flags '-fx-base', '-fx-background-color' and '-fx-control-inner-background' to tweak the background." HBox.hgrow="ALWAYS" />
+                        <VBox spacing="7.0">
+                            <children>
+                                <Button fx:id="bShowXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowBackgroundXyGradient" prefWidth="64.0" text="Show" />
+                                <Button fx:id="bResetXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundColor" prefWidth="64.0" text="Reset" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
     </children>
 </VBox>

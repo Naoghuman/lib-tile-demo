@@ -176,14 +176,16 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
         
         Platform.runLater(() -> {
-            final String _fx_base = "-fx-base: "; // NOI18N
-            final String _fx_background_color = "-fx-background-color: ";
-            final String _fx_control_inner_background = "-fx-control-inner-background: "; // NOI18N
+//            final String _fx_base = "-fx-base: "; // NOI18N
+//            final String _fx_background_color = "-fx-background-color: ";
+//            final String _fx_control_inner_background = "-fx-control-inner-background: "; // NOI18N
+//            
+//            apBackground.setStyle(
+//                    _fx_base + backgroundColor
+//                    + _fx_background_color + backgroundColor
+//                    + _fx_control_inner_background + backgroundColor);
             
-            apBackground.setStyle(
-                    _fx_base + backgroundColor
-                    + _fx_background_color + backgroundColor
-                    + _fx_control_inner_background + backgroundColor);
+            apBackground.setStyle(backgroundColor);
         });
     }
     
