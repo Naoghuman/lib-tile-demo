@@ -22,6 +22,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Enhancement
+#5 [Background] Add two buttons 'Example' to the TitledPane 'Background'.
 #4 [About] Read property 'version' from pom.xml and show it into TitledPane 'About'.
 
 

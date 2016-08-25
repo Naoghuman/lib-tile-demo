@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox id="VBox" prefHeight="264.0" prefWidth="242.0" spacing="7.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundPresenter">
+<VBox id="VBox" prefHeight="293.0" prefWidth="246.0" spacing="7.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundPresenter">
     <children>
         <VBox spacing="2.0">
             <children>
@@ -17,7 +17,12 @@
                     <children>
                         <VBox spacing="7.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <TextField fx:id="tfUrlBackgroundImage" onAction="#onActionShowBackgroundImage" promptText="The image will be resized to 1280 x 720" />
+                                <HBox spacing="7.0">
+                                    <children>
+                                        <TextField fx:id="tfUrlBackgroundImage" onAction="#onActionShowBackgroundImage" promptText="The image will be resized to 1280 x 720" HBox.hgrow="ALWAYS" />
+                                        <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowExampleBackgroundImage" prefWidth="64.0" text="Example" />
+                                    </children>
+                                </HBox>
                                 <ProgressBar fx:id="pbImageLoading" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="25.0" progress="0.0" style="-fx-padding: 0;">
                                     <padding>
                                         <Insets top="5.0" />
@@ -60,6 +65,7 @@
                         <VBox spacing="7.0">
                             <children>
                                 <Button fx:id="bShowXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowBackgroundXyGradient" prefWidth="64.0" text="Show" />
+                                <Button fx:id="bShowExampleXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionShowExampleXyGradient" prefWidth="64.0" text="Example" />
                                 <Button fx:id="bResetXyGradient" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionResetBackgroundColor" prefWidth="64.0" text="Reset" />
                             </children>
                         </VBox>

@@ -134,7 +134,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background image"); // NOI18N
 
         Platform.runLater(() -> {
-            apBackground.setStyle("-fx-base: AQUAMARINE;"); // NOI18N
+            apBackground.setStyle("-fx-base: AQUAMARINE;" // NOI18N
+                    + "-fx-control-inner-background: AQUAMARINE;" // NOI18N
+                    + "-fx-background-color: AQUAMARINE;"); // NOI18N
         });
     }
     
