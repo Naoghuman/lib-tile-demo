@@ -221,7 +221,7 @@ Clicking the button `Reset` reset the background color to the default color
 The [TitledPane] `Tile` allowed you to choose a [Tile] from one of the available 
 tilesets. Momentary only the [Transparent Textures] tiles are available.
 
-> __Reminder__  
+> __Definition__  
 > A [Tile] is per definition a little transparent [Image] which overlay a 
 > background-color or -image with the help of repetitions from the image in a 
 > layer.
@@ -232,11 +232,24 @@ tilesets. Momentary only the [Transparent Textures] tiles are available.
 The [Transparent Textures] tiles are from the webpage https://www.transparenttextures.com/ 
 and are free to use. Momentary there are `396` tiles in the demo application available.
 
-The tiles are loaded with the help through the enum [TransparentTexturesTile] 
-from the library [Lib-Tile-TransparentTextures].
+<br />
+_Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
+_Tile:_ Subtle White Feathers by Viahorizon  
+![demo-application-modified2.png][demo-application-modified2]
 
-_Enum_ TransparentTexturesTile
-```Java
+> __Hint__  
+> The background image is taken from https://wall.alphacoders.com/big.php?i=723891 
+> and is under the license from CCO Public Domain Image. Big thanks to the autor for 
+> his great work :smiley:.  
+> The tile image is taken from https://www.transparenttextures.com/ and is free 
+> to use. Big thanks to the autor for his great work :smiley:. 
+
+<br />
+The tiles are loaded with the help from the enum [TransparentTexturesTile] which 
+is included into the library [Lib-Tile-TransparentTextures].
+
+Enum [TransparentTexturesTile]
+```java
 /**
  * The <code>enum</code> TransparentTexturesTile is a collection from 
  * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
@@ -251,20 +264,43 @@ _Enum_ TransparentTexturesTile
  * @see com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader
  */
 public enum TransparentTexturesTile implements Tile {
+
+    /**
+     * The <code>Java</code> representation from the tile: 3Px Tile
+     */
+    TT_3PX_TILE("tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"), // NOI18N
+    
+    /**
+     * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
+     */
+    TT_45_DEGREE_FABRIC_DARK("tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"), // NOI18N
+    
+    // and 394 more tiles! :))
+
+    TransparentTexturesTile(
+            final String name, final String header,
+            final double width, final double height,
+            final String autor
+    ) {
+        this(name, header, width, height, autor, ""); // NOI18N
+    }
+
+    TransparentTexturesTile(
+            final String imageName, final String title,
+            final double width, final double height,
+            final String autor, final String autorUrl
+    ) {
+        this.imageName = imageName;
+        this.title = title;
+        this.width = width;
+        this.height = height;
+        this.autor = autor;
+        this.autorUrl = autorUrl;
+    }
+
+    ...
+}
 ```
-
-<br />
-_Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
-_Tile:_ Subtle White Feathers by Viahorizon  
-![demo-application-modified2.png][demo-application-modified2]
-
-> __Hint__  
-> The background image is taken from https://wall.alphacoders.com/big.php?i=723891 
-> and is under the license from CCO Public Domain Image. Big thanks to the autor for 
-> his great work :smiley:.  
-> The tile image is taken from https://www.transparenttextures.com/ and is free 
-> to use. Big thanks to the autor for his great work :smiley:. 
-
 
 
 <br />
