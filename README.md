@@ -202,7 +202,7 @@ _Image:_ No Image Icon
 
 Momentary it's only possible to choose a `single` color over the [ColorPicker].
 
-_Image:_ ColorPicker  
+_Image:_ Open ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
 <br />
@@ -332,14 +332,13 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[demo-application-default]:https://cloud.githubusercontent.com/assets/8161815/17342760/efe5803c-58fa-11e6-905b-f8a0d8ff856d.png
-[demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/17342882/78c98ad8-58fb-11e6-8187-cd23bf50e3fd.jpg
-[demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/17816937/fbc190d2-663b-11e6-951b-5c9aedabc99a.png
-[different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/17412537/8fd2c446-5a7d-11e6-82b2-34aca4f5f870.png
-[loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/17816075/99caeba2-6637-11e6-9b2e-b45dfe86057c.png
-[no-image-icon]:https://cloud.githubusercontent.com/assets/8161815/17814287/75c4604c-662f-11e6-8343-1f3aa844c5e6.png
-[open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/17674878/b3718380-6327-11e6-868f-7a7d5292031b.png
-[titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/17829543/22b311f4-66b2-11e6-8f51-27d7b77871ef.png
+[demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/18012188/bb3bfeda-6bb8-11e6-97e9-d627b1c80e1c.png
+[demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/18013152/2db5feda-6bbd-11e6-85ea-bc77e10581ac.png
+[different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/18012472/e352d8c0-6bb9-11e6-8e59-96d25178c269.png
+[loaded-crimson-night]:https://cloud.githubusercontent.com/assets/8161815/18012699/f3811530-6bba-11e6-84ea-4ff6cd714d61.png
+[no-image-icon]:https://cloud.githubusercontent.com/assets/8161815/18012898/c7953680-6bbb-11e6-8823-d849d9e2ec7a.png
+[open-colorpicker]:https://cloud.githubusercontent.com/assets/8161815/18013011/6e172c0c-6bbc-11e6-9fa9-e094bd38f5e1.png
+[titledpane-about]:https://cloud.githubusercontent.com/assets/8161815/18013460/6706f5da-6bbe-11e6-8d80-9e86abd4bc13.png
 
 
 

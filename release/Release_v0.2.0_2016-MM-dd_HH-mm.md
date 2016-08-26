@@ -32,6 +32,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Refactoring
+#6 [Documentation] Update the documentation to reflect the new enhancements.
 #3 [About] Rename title 'Cancel Icon' to 'No Image Icon'.
 
 
