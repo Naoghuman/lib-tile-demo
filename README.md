@@ -209,19 +209,72 @@ _Image:_ No Image Icon
 <br />
 ### _Choose a Background Color_<a name="BaCo" />
 
-Momentary it's only possible to choose a `single` color over the [ColorPicker].
+* Given is the selection from the [RadioButton] `Colorchooser`.  
+* Click on the [ColorPicker] will open the color dialog where a new color can 
+  choosen.
+* Clicking the button `Reset` reset the background color to the default color 
+  [AQUAMARINE].
 
 _Image:_ Open ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
 <br />
-Clicking the button `Reset` reset the background color to the default color 
-[AQUAMARINE].
+Method onActionShowBackgroundSingleColor(Color) in the class [ApplicationPresenter]
+```java
+private void onActionShowBackgroundSingleColor(Color backgroundColor) {
+    LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background SingleColor"); // NOI18N
 
-> __Hint__  
-> For a future version I plan to implement the option that the developer have the 
-> option to define a [LinearGradient] or a [RadialGradient] colors as a 
-> background color through `css` styling &#040;[JavaFX CSS Reference Guide]&#041;.
+    Platform.runLater(() -> {
+        final String _fx_base = "-fx-base: rgba("; // NOI18N
+        final String _fx_control_inner_background = "-fx-control-inner-background: rgba("; // NOI18N
+
+        final StringBuilder sb = new StringBuilder();
+        sb.append((int)(backgroundColor.getRed() * 255));
+        sb.append(", "); // NOI18N
+        sb.append((int)(backgroundColor.getGreen() * 255));
+        sb.append(", "); // NOI18N
+        sb.append((int)(backgroundColor.getBlue() * 255));
+        sb.append(", "); // NOI18N
+        sb.append(backgroundColor.getOpacity());
+        sb.append("); "); // NOI18N
+
+        apBackground.setStyle(_fx_base + sb.toString()
+                + _fx_control_inner_background + sb.toString());
+    });
+}
+```
+
+<br />
+* Given is the selection from the [RadioButton] `Linear- and/or RadialGradient`.  
+* For a `css` example plz click on the `Example` button.
+    * For additional information see [LinearGradient], [RadialGradient] and / or 
+      [JavaFX CSS Reference Guide].
+* Clicking the button `Reset` reset the background color to the default color 
+  [AQUAMARINE].
+
+_Image:_ Open ColorPicker  
+![css-example-gradient.png][css-example-gradient]
+
+<br />
+Method onActionShowBackgroundXyGradient(String) in the class [ApplicationPresenter]
+```java
+private void onActionShowBackgroundXyGradient(String backgroundColor) {
+    LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
+        
+    Platform.runLater(() -> {
+//        final String _fx_base = "-fx-base: "; // NOI18N
+//        final String _fx_background_color = "-fx-background-color: ";
+//        final String _fx_control_inner_background = "-fx-control-inner-background: "; // NOI18N
+//            
+//        apBackground.setStyle(
+//                _fx_base + backgroundColor
+//                + _fx_background_color + backgroundColor
+//                + _fx_control_inner_background + backgroundColor);
+            
+        apBackground.setStyle(backgroundColor);
+    });
+}
+```
 
 
 <br />
@@ -380,6 +433,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
+[css-example-gradient]:https://cloud.githubusercontent.com/assets/8161815/18014951/a992f636-6bc5-11e6-85ed-0605d5e64498.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/18012188/bb3bfeda-6bb8-11e6-97e9-d627b1c80e1c.png
 [demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/18013152/2db5feda-6bbd-11e6-85ea-bc77e10581ac.png
 [different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/18012472/e352d8c0-6bb9-11e6-8e59-96d25178c269.png
@@ -392,6 +446,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Links)
 [AbstractTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/AbstractTileLoader.java
+[ApplicationPresenter]:https://github.com/Naoghuman/lib-tile-demo/blob/master/src/main/java/com/github/naoghuman/lib/tile/demo/application/ApplicationPresenter.java
 [AQUAMARINE]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/Color.html#AQUAMARINE
 [Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
 [ColorPicker]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ColorPicker.html
@@ -416,6 +471,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Project-Templates]:https://github.com/Naoghuman/Project-Templates
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
+[RadioButton]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/RadioButton.html
 [ReadMe from Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures
 [Seb Jachec]:http://twitter.com/iamsebj
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
