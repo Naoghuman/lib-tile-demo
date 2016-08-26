@@ -245,14 +245,17 @@ private void onActionShowBackgroundSingleColor(Color backgroundColor) {
 ```
 
 <br />
-* Given is the selection from the [RadioButton] `Linear- and/or RadialGradient`.  
+* Given is the selection from the [RadioButton] `Linear- and/or RadialGradient`.
+* Like the `prompt` text said in the [TextArea] the three flags `-fx-base` , 
+  `-fx-background-color` and `-fx-control-inner-background` are for the tweaking 
+  from interest.
 * For a `css` example plz click on the `Example` button.
     * For additional information see [LinearGradient], [RadialGradient] and / or 
       [JavaFX CSS Reference Guide].
 * Clicking the button `Reset` reset the background color to the default color 
   [AQUAMARINE].
 
-_Image:_ Open ColorPicker  
+_Image:_ Example `css` combined [LinearGradient] and [RadialGradient].
 ![css-example-gradient.png][css-example-gradient]
 
 <br />
@@ -474,6 +477,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [RadioButton]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/RadioButton.html
 [ReadMe from Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures
 [Seb Jachec]:http://twitter.com/iamsebj
+[TextArea]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextArea.html
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TitledPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TitledPane.html
