@@ -159,11 +159,17 @@ the background color from the application.
 <br />
 ### _Choose a Background Image_<a name="BaIm" />
 
-With the [TextField] `Background image` the developer have the option to load 
-an optional background image from the internet. Momentary only images from the 
-internet are accepted. The loaded image will be `resized` to 1280x720.
+With the [TextField] `Background image` the developer / user have the option to 
+load an optional background image from the internet. Momentary only images from 
+the internet are accepted. The loaded image will be `resized` to the size 
+1280x720.
 
-For example use this link in the application:  
+> __Hint__  
+> For a future version I plan the option that the developer / user can also choose 
+> a local stored images via a [FileChooser].
+
+<br />
+For example use this link in the demo application and click on the `Load` button:  
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
 _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;  
@@ -176,12 +182,15 @@ _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;
 > project plz send me an email &#040;see [Contact](#Contact)&#041; and I will 
 > remove it. Thanks for your great work :smiley:.
 
-<br />
-Clicking the button `Reset` removes the background image and clears the [TextField].
+> __Ps__  
+> A click on the `Example` button will prefilled the [TextField] `Background image` 
+> with an example link. Then like above described click the `Load` button to load 
+> the image.
 
-> __Hint__  
-> For a future version I plan the option that the developer can also choose local 
-> stored images via a [FileChooser].
+<br />
+Clicking the button `Reset` removes the loaded background image and clears the 
+[TextField].
+
 
 <br />
 ### _Feedback: No Image Icon_<a name="NoImIc" />
