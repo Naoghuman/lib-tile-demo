@@ -436,7 +436,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Images)
-[css-example-gradient]:https://cloud.githubusercontent.com/assets/8161815/18014951/a992f636-6bc5-11e6-85ed-0605d5e64498.png
+[css-example-gradient]:https://cloud.githubusercontent.com/assets/8161815/18015218/fbc532e2-6bc6-11e6-9962-3173e3ef5df2.png
 [demo-application-modified]:https://cloud.githubusercontent.com/assets/8161815/18012188/bb3bfeda-6bb8-11e6-97e9-d627b1c80e1c.png
 [demo-application-modified2]:https://cloud.githubusercontent.com/assets/8161815/18013152/2db5feda-6bbd-11e6-85ea-bc77e10581ac.png
 [different-tile-images]:https://cloud.githubusercontent.com/assets/8161815/18012472/e352d8c0-6bb9-11e6-8e59-96d25178c269.png
