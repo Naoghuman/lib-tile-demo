@@ -302,6 +302,9 @@ public enum TransparentTexturesTile implements Tile {
 }
 ```
 
+<br />
+For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures].
+
 
 <br />
 ### TitledPane About<a name="TiPaAb" />
@@ -404,6 +407,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Project-Templates]:https://github.com/Naoghuman/Project-Templates
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [RadialGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/RadialGradient.html
+[ReadMe from Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures
 [Seb Jachec]:http://twitter.com/iamsebj
 [TextField]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
