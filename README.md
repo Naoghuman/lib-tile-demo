@@ -209,6 +209,7 @@ _Image:_ No Image Icon
 <br />
 ### _Choose a Background Color_<a name="BaCo" />
 
+##### Single color
 * Given is the selection from the [RadioButton] `Colorchooser`.  
 * Click on the [ColorPicker] will open the color dialog where a new color can 
   choosen.
@@ -245,6 +246,7 @@ private void onActionShowBackgroundSingleColor(Color backgroundColor) {
 ```
 
 <br />
+##### Linear- and/or RadialGradient
 * Given is the selection from the [RadioButton] `Linear- and/or RadialGradient`.
 * Like the `prompt` text said in the [TextArea] the three flags `-fx-base` , 
   `-fx-background-color` and `-fx-control-inner-background` are for the tweaking 
