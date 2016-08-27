@@ -8,7 +8,9 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Summary
-* ...
+* The main point in this release is the option to define with `CSS` a Linear- 
+  and/or a RadialGradient color as a background color.
+* The documentation is update to reflect this new feature and version.
 
 
 

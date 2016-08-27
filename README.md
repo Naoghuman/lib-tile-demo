@@ -11,7 +11,7 @@ This project is a `demonstration` application to show the features from the
 project [Lib-Tile] and it's included sublibraries `lib-tile-core`, 
 `lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
 
-The current `version` is `0.1.0` from 08.20.2016.
+The current `version` is `0.2.0` from 08.27.2016.
 
 <br />
 _Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
@@ -398,7 +398,7 @@ Requirements<a name="Requirements" />
 Installation<a name="Installation" />
 ---
 
-* Current version is [Lib-Tile-Demo v0.1.0] &#040;08.20.2016&#041;.
+* Current version is [Lib-Tile-Demo v0.2.0] &#040;08.27.2016&#041;.
 * Download it and unzip the folder to a place of your choose.
 * Doubleclick the jar file inside the folder and have fun :smiley:.
 
@@ -467,7 +467,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Lib-Tile-Core]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core
-[Lib-Tile-Demo v0.1.0]:https://github.com/Naoghuman/lib-tile-demo/releases
+[Lib-Tile-Demo v0.2.0]:https://github.com/Naoghuman/lib-tile-demo/releases
 [Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
 [Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures-Images
 [LinearGradient]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/paint/LinearGradient.html
