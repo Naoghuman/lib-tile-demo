@@ -45,7 +45,7 @@ public class ImagesLoader {
             final URI uri = ImagesLoader.class.getResource(CANT_LOAD_THE_IMAGE).toURI();
             img = new Image(uri.toString(), 256.0d, 256.0d, true, true, true);
         } catch (Exception ex) {
-            LoggerFacade.INSTANCE.error(this.getClass(), "Can't load the image: " + CANT_LOAD_THE_IMAGE, ex); // NOI18N
+            LoggerFacade.getDefault().error(this.getClass(), "Can't load the image: " + CANT_LOAD_THE_IMAGE, ex); // NOI18N
         }
         
         return img;

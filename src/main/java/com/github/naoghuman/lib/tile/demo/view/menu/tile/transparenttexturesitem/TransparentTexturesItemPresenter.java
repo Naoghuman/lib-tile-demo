@@ -49,11 +49,11 @@ public final class TransparentTexturesItemPresenter implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.INSTANCE.trace(this.getClass(), "Initialize TransparentTexturesItemPresenter"); // NOI18N
+        LoggerFacade.getDefault().trace(this.getClass(), "Initialize TransparentTexturesItemPresenter"); // NOI18N
     }
     
     public final void configure(Parent parent, TransparentTexturesTile tile) {
-        LoggerFacade.INSTANCE.trace(this.getClass(), "Configure tile: " + tile.getImageName()); // NOI18N
+        LoggerFacade.getDefault().trace(this.getClass(), "Configure tile: " + tile.getImageName()); // NOI18N
         
         this.parent = parent;
         this.tile = tile;
@@ -77,7 +77,7 @@ public final class TransparentTexturesItemPresenter implements Initializable {
                     try {
                         Desktop.getDesktop().browse(new URL(url).toURI());
                     } catch (URISyntaxException | IOException ex) {
-                        LoggerFacade.INSTANCE.error(this.getClass(), "Can't open URL in system browser: " + url, ex); // NOI18N
+                        LoggerFacade.getDefault().error(this.getClass(), "Can't open URL in system browser: " + url, ex); // NOI18N
                     }
                 }
             });

@@ -7,6 +7,7 @@ project [Lib-Tile] with its included sublibraries which are:
 * [Lib-Tile-TransparentTextures-Images]
 
 
+
 #### Summary
 * ...
 * ...
@@ -30,6 +31,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Refactoring
+#8 [pom] Update the dependencies to the libraries in pom.xml.
 
 
 

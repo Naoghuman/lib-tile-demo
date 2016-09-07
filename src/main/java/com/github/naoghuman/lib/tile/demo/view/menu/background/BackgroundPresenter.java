@@ -60,7 +60,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize BackgroundPresenter"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize BackgroundPresenter"); // NOI18N
         
         this.initializeBackgroundParameters(resources);
         this.initializeColorComponents();
@@ -69,7 +69,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     private void initializeBackgroundParameters(ResourceBundle resources) {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize Background parameters"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize Background parameters"); // NOI18N
         
         try {
             backgroundExampleCSS = resources.getString(KEY__BACKGROUND__EXAMPLE_CSS);
@@ -81,7 +81,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     private void initializeColorComponents() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize Color components"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize Color components"); // NOI18N
         
         cpBackgroundColor.setDisable(Boolean.FALSE);
         bResetSingleColor.setDisable(Boolean.FALSE);
@@ -93,13 +93,13 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     private void initializeColorPickerForBackgroundColor() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize ColorPicker for background color"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize ColorPicker for background color"); // NOI18N
         
         cpBackgroundColor.setValue(IApplicationConfiguration.DEFAULT_BACKGROUND_COLOR);
     }
     
     private void initializeTextFieldForBackgroundImage() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize TextField for background image"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize TextField for background image"); // NOI18N
         
         final Tooltip tt = new Tooltip("Images will be resized to 1280x720" // NOI18N
                 + "\nEmpty URL reset the background image"); // NOI18N
@@ -108,28 +108,28 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     
     @Override
     public void registerActions() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in BackgroundPresenter"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register actions in BackgroundPresenter"); // NOI18N
     }
     
     public void onActionResetBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background color"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Background color"); // NOI18N
         
         cpBackgroundColor.setValue(IApplicationConfiguration.DEFAULT_BACKGROUND_COLOR);
         taXyGrandient.setText(null);
-        ActionFacade.INSTANCE.handle(ON_ACTION__RESET_BACKGROUND_COLOR);
+        ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_COLOR);
     }
     
     public void onActionResetBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Background image"); // NOI18N
         
         tfUrlBackgroundImage.setText(null);
         pbImageLoading.progressProperty().unbind();
         pbImageLoading.setProgress(0.0d);
-        ActionFacade.INSTANCE.handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
+        ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
     }
     
     public void onActionSelectSingleColor(ActionEvent event) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select Singlecolor"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action select Singlecolor"); // NOI18N
         
         if (!(event.getSource() instanceof RadioButton)) {
             return;
@@ -148,7 +148,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     public void onActionSelectXyGradient(ActionEvent event) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select XyGradient"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action select XyGradient"); // NOI18N
         
         if (!(event.getSource() instanceof RadioButton)) {
             return;
@@ -167,7 +167,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     public void onActionShowBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action select Background color"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action select Background color"); // NOI18N
         
         final TransferData data = new TransferData();
         data.setActionId(ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR);
@@ -175,11 +175,11 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         final Color backgroundColor = cpBackgroundColor.getValue();
         data.setObject(backgroundColor);
         
-        ActionFacade.INSTANCE.handle(data);
+        ActionFacade.getDefault().handle(data);
     }
     
     public void onActionShowBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Background image"); // NOI18N
         
         // Check URL
         final String url = tfUrlBackgroundImage.getText().trim();
@@ -188,7 +188,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
                 || (url.isEmpty())
         ) {
             // Reset the Background image
-            ActionFacade.INSTANCE.handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
+            ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
             return;
         }
         
@@ -198,11 +198,11 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         data.setString(url);
         data.setObject(pbImageLoading);
         
-        ActionFacade.INSTANCE.handle(data);
+        ActionFacade.getDefault().handle(data);
     }
     
     public void onActionShowBackgroundXyGradient() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
         
         // Check backgroundColor
         final String backgroundColor = taXyGrandient.getText();
@@ -218,17 +218,17 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         data.setActionId(ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT);
         data.setString(backgroundColor);
         
-        ActionFacade.INSTANCE.handle(data);
+        ActionFacade.getDefault().handle(data);
     }
     
     public void onActionShowExampleBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Example Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Example Background image"); // NOI18N
         
         tfUrlBackgroundImage.setText(backgroundExampleImageURL);
     }
     
     public void onActionShowExampleXyGradient() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Example XyGradient"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Example XyGradient"); // NOI18N
         
         taXyGrandient.setText(backgroundExampleCSS);
     }

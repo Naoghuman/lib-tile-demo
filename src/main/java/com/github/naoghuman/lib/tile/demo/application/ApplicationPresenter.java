@@ -61,7 +61,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize ApplicationPresenter"); // NOI18N
         
 //        assert (apView != null) : "fx:id=\"apView\" was not injected: check your FXML file 'Application.fxml'."; // NOI18N
 
@@ -75,19 +75,19 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void initializeTitledPaneTile() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize TitledPane tile"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize TitledPane tile"); // NOI18N
     
         tpTile.expandedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             final TransferData data = new TransferData();
             data.setActionId(ON_ACTION__SWITCH_SELECTION);
             data.setBoolean(newValue);
             
-            ActionFacade.INSTANCE.handle(data);
+            ActionFacade.getDefault().handle(data);
         });
     }
     
     public void initializeAfterWindowIsShowing() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize ApplicationPresenter after window is showing"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize ApplicationPresenter after window is showing"); // NOI18N
     
         Platform.runLater(() -> {
             tpBackground.setExpanded(true);
@@ -95,7 +95,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void initializeBackgroundImage() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize Background image"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize Background image"); // NOI18N
         
         ivBackgroundImage.setImage(null);
         ivBackgroundImage.setFitWidth(1280.0d);
@@ -103,7 +103,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void initializeMenuAbout() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize menu About"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize menu About"); // NOI18N
         
         final AboutView view = new AboutView();
         
@@ -111,7 +111,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void initializeMenuBackground() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize menu Background"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize menu Background"); // NOI18N
         
         final BackgroundView view = new BackgroundView();
         final BackgroundPresenter presenter = view.getRealPresenter();
@@ -121,7 +121,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void initializeMenuTile() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize menu Tile"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize menu Tile"); // NOI18N
         
         final TileView view = new TileView();
         final TilePresenter presenter = view.getRealPresenter();
@@ -131,7 +131,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void onActionResetBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Background image"); // NOI18N
 
         Platform.runLater(() -> {
             apBackground.setStyle("-fx-base: AQUAMARINE;" // NOI18N
@@ -141,19 +141,19 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void onActionResetBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Background image"); // NOI18N
         
         ivBackgroundImage.setImage(null);
     }
     
     private void onActionResetTileBackground() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Tile background"); // NOI18N
         
         apTileBackground.setBackground(null);
     }
     
     private void onActionShowBackgroundSingleColor(Color backgroundColor) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background SingleColor"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Background SingleColor"); // NOI18N
 
         Platform.runLater(() -> {
             final String _fx_base = "-fx-base: rgba("; // NOI18N
@@ -175,7 +175,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void onActionShowBackgroundXyGradient(String backgroundColor) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Background XyGradient"); // NOI18N
         
         Platform.runLater(() -> {
 //            final String _fx_base = "-fx-base: "; // NOI18N
@@ -192,7 +192,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void onActionShowBackgroundImage(ProgressBar pbImageLoading, String url) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Background image with url: " + url); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Background image with url: " + url); // NOI18N
         
         this.initializeBackgroundImage();
         try {
@@ -214,7 +214,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
                 }
             });
         } catch (NullPointerException | IllegalArgumentException ex) {
-            LoggerFacade.INSTANCE.error(this.getClass(), 
+            LoggerFacade.getDefault().error(this.getClass(), 
                     "Can't load the Background image with the URL: " + url, ex); // NOI18N
             
             ivBackgroundImage.setFitWidth(256.0d);
@@ -224,14 +224,14 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void onActionShowTileBackground(Background background) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Tile background"); // NOI18N
         
         apTileBackground.setBackground(background);
     }
     
     @Override
     public void registerActions() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in ApplicationPresenter"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register actions in ApplicationPresenter"); // NOI18N
         
         this.registerOnActionResetBackgroundColor();
         this.registerOnActionResetBackgroundImage();
@@ -244,9 +244,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void registerOnActionResetBackgroundColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action reset Background color"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Background color"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__RESET_BACKGROUND_COLOR,
                 (ActionEvent event) -> {
                     this.onActionResetBackgroundColor();
@@ -254,9 +254,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void registerOnActionResetBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action reset Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Background image"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__RESET_BACKGROUND_IMAGE,
                 (ActionEvent event) -> {
                     this.onActionResetBackgroundImage();
@@ -264,9 +264,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void registerOnActionResetTileImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action reset Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Tile background"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__RESET_TILE_BACKGROUND,
                 (ActionEvent event) -> {
                     this.onActionResetTileBackground();
@@ -274,9 +274,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void registerOnActionShowBackgroundSingleColor() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background SingleColor"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background SingleColor"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
@@ -286,9 +286,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     private void registerOnActionShowBackgroundXyGradient() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background XyGradient"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background XyGradient"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
@@ -298,9 +298,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void registerOnActionShowBackgroundImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Background image"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background image"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_IMAGE,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
@@ -311,9 +311,9 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
 
     private void registerOnActionShowTileImage() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action show Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Tile background"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__SHOW_TILE_BACKGROUND,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();

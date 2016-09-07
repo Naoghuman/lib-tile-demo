@@ -35,15 +35,15 @@ public class AboutPresenter implements Initializable, IApplicationConfiguration 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize AboutPresenter"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize AboutPresenter"); // NOI18N
         
         this.initializeLabelVersion();
     }
 
     private void initializeLabelVersion() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize label Version"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize label Version"); // NOI18N
         
-        final String version = PropertiesFacade.INSTANCE.getProperty(
+        final String version = PropertiesFacade.getDefault().getProperty(
                 KEY__APPLICATION__RESOURCE_BUNDLE, KEY__APPLICATION__VERSION);
         lVersion.setText(version);
     }

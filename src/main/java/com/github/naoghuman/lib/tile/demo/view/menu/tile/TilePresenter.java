@@ -57,13 +57,13 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize TilePresenter"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize TilePresenter"); // NOI18N
         
         this.initializeTransparentTextures();
     }
 
     private void initializeTransparentTextures() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize TransparentTextures"); // NOI18N
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize TransparentTextures"); // NOI18N
         
         lvTransparentTextures.getItems().clear();
         lvTransparentTextures.setCellFactory(value -> new TransparentTexturesItemCell());
@@ -105,14 +105,14 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     }
     
     public void onActionResetTileBackground() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action reset Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Tile background"); // NOI18N
         
         lvTransparentTextures.getSelectionModel().clearSelection();
-        ActionFacade.INSTANCE.handle(ON_ACTION__RESET_TILE_BACKGROUND);
+        ActionFacade.getDefault().handle(ON_ACTION__RESET_TILE_BACKGROUND);
     }
 
     private void onActionShowTileBackground(Tile tile) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show Tile background"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show Tile background"); // NOI18N
         
         final TransferData data = new TransferData();
         data.setActionId(ON_ACTION__SHOW_TILE_BACKGROUND);
@@ -120,11 +120,11 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
         final Background background = TransparentTexturesTileLoader.getDefault().loadAsBackground(tile);
         data.setObject(background);
 
-        ActionFacade.INSTANCE.handle(data);
+        ActionFacade.getDefault().handle(data);
     }
 
     private void onActionSwitchSelection(boolean titledPaneExpand) {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On action show switch Selection"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "On action show switch Selection"); // NOI18N
         
         /*
         try a hack for the false background color when the selection is vanished.
@@ -159,15 +159,15 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     
     @Override
     public void registerActions() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in TilePresenter"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register actions in TilePresenter"); // NOI18N
         
         this.registerOnActionSwitchSelection();
     }
     
     private void registerOnActionSwitchSelection() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on Action switch Selection"); // NOI18N
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on Action switch Selection"); // NOI18N
         
-        ActionFacade.INSTANCE.register(
+        ActionFacade.getDefault().register(
                 ON_ACTION__SWITCH_SELECTION,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
