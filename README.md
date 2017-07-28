@@ -3,7 +3,6 @@ Lib-Tile-Demo
 
 
 
-<br />
 Intention
 ---
 
@@ -11,9 +10,6 @@ This project is a `demonstration` application to show the features from the
 project [Lib-Tile] and it's included sublibraries `lib-tile-core`, 
 `lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
 
-The current `version` is `0.2.0` from 08.27.2016.
-
-<br />
 _Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
 _Tile:_ Blu Stripes made by [Seb Jachec]  
 ![demo-application-modified.png][demo-application-modified]
@@ -25,7 +21,8 @@ _Tile:_ Blu Stripes made by [Seb Jachec]
 > The tile image is taken from https://www.transparenttextures.com/ and is free 
 > to use. Big thanks to the autor for his great work :smiley:.
 
-<br />
+The current `version` is `0.2.0` from 08.27.2016.
+
 The demo application is build with the `Project-Template-afterburnerfx-Naoghuman` 
 from my project [Project-Templates].
 
@@ -38,7 +35,6 @@ Please have a look for more information in the project README [Project-Templates
 
 
 
-<br />
 Content
 ---
 
@@ -64,7 +60,6 @@ Content
 
 
 
-<br />
 Demonstration<a name="Demonstration" />
 ---
 
@@ -73,7 +68,6 @@ show the features from the project [Lib-Tile] and it's included sublibraries
 `lib-tile-core`, `lib-tile-transparenttextures` and `lib-tile-transparenttextures-images`.
 
 
-<br />
 ### Project Lib-Tile<a name="LiTi" />
 
 `Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 8.0.2 
@@ -101,17 +95,16 @@ _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 
 For more information plz see [Lib-Tile].
 
-<br />
+
 ### _Library Lib-Tile-Core_<a name="LiTiCo" />
 
 The library `Lib-Tile-Core` provides the main functionalities to load a [Tile] 
 as a [Background] or an [Image] with a concrete implementation from the interface 
 [AbstractTileLoader].
 
-<br />
 For more informations and examples plz see [Lib-Tile-Core].
 
-<br />
+
 ### _Library Lib-Tile-TransparentTextures_<a name="LiTiTr" />
 
 With the library `Lib-Tile-TransparentTextures` the developer have access to the 
@@ -124,11 +117,10 @@ more advance is that you can use an `own` [AbstractTileLoader] in combination
 with the library `Lib-Tile-TransparentTextures`. So you don't need to include the 
 library `Lib-Tile-TransparentTextures-Images` into your project which size is 
 momenatry `13MB`.
-
-<br />
+>
 For more informations and examples plz see [Lib-Tile-TransparentTextures].
 
-<br />
+
 ### _Library Lib-Tile-TransparentTextures-Images_<a name="LiTiTrIm" />
 
 The library `Lib-Tile-TransparentTextures-Images` contains all images from the 
@@ -136,12 +128,10 @@ tileset `Transparent Textures` and the loader [TransparentTexturesTileLoader]
 which allowed the developer to load a [Tile] image from the enum 
 [TransparentTexturesTile].
 
-<br />
 For more informations and examples plz see [Lib-Tile-TransparentTextures-Images].
 
 
 
-<br />
 Features<a name="Features" />
 ---
 
@@ -150,13 +140,12 @@ library [Lib-Tile] and its containing sub-libraries which are momentary
 `lib-core`, `lib-transparent-textures` and `lib-transparent-textures-images`.
 
 
-<br />
 ### TitledPane Background<a name="TiPaBa" />
 
 Over the [TitledPane] `Background` you can tweak the background image and / or 
 the background color from the application.
 
-<br />
+
 ### _Choose a Background Image_<a name="BaIm" />
 
 With the [TextField] `Background image` the developer / user have the option to 
@@ -168,7 +157,6 @@ the internet are accepted. The loaded image will be `resized` to the size
 > For a future version I plan the option that the developer / user can also choose 
 > a local stored images via a [FileChooser].
 
-<br />
 For example use this link in the demo application and click on the `Load` button:  
 * https://cloud.githubusercontent.com/assets/8161815/17748160/601043ba-64b8-11e6-84dd-6e7075dbcf80.jpg
 
@@ -187,12 +175,10 @@ _Image:_ Loaded Crimson Night &#040;Dark / Landscape&#041;
 > with an example link. Then like above described click the `Load` button to load 
 > the image.
 
-<br />
 Clicking the button `Reset` removes the loaded background image and clears the 
 [TextField].
 
 
-<br />
 ### _Feedback: No Image Icon_<a name="NoImIc" />
 
 In the case that its shouldn't be possible to load an [Image] into the demo 
@@ -206,7 +192,7 @@ _Image:_ No Image Icon
 > and under the license: Creative Commons Attribution-No Derivative Works 3.0 
 > Unported. Thanks for the great work :smiley:.
 
-<br />
+
 ### _Choose a Background Color_<a name="BaCo" />
 
 #### Single color
@@ -219,7 +205,6 @@ _Image:_ No Image Icon
 _Image:_ Open ColorPicker  
 ![open-colorpicker.png][open-colorpicker]
 
-<br />
 Method onActionShowBackgroundSingleColor(Color) in the class [ApplicationPresenter]
 ```java
 private void onActionShowBackgroundSingleColor(Color backgroundColor) {
@@ -245,7 +230,6 @@ private void onActionShowBackgroundSingleColor(Color backgroundColor) {
 }
 ```
 
-<br />
 #### Linear- and/or RadialGradient
 * Given is the selection from the [RadioButton] `Linear- and/or RadialGradient`.
 * Like the `prompt` text said in the [TextArea] the three flags `-fx-base` , 
@@ -260,7 +244,6 @@ private void onActionShowBackgroundSingleColor(Color backgroundColor) {
 _Image:_ Example `css` combined [LinearGradient] and [RadialGradient].
 ![css-example-gradient.png][css-example-gradient]
 
-<br />
 Method onActionShowBackgroundXyGradient(String) in the class [ApplicationPresenter]
 ```java
 private void onActionShowBackgroundXyGradient(String backgroundColor) {
@@ -282,7 +265,6 @@ private void onActionShowBackgroundXyGradient(String backgroundColor) {
 ```
 
 
-<br />
 ### TitledPane Tile<a name="TiPaTi" />
 
 The [TitledPane] `Tile` allowed you to choose a [Tile] from one of the available 
@@ -293,13 +275,12 @@ tilesets. Momentary only the [Transparent Textures] tiles are available.
 > background-color or -image with the help of repetitions from the image in a 
 > layer.
 
-<br />
+
 ### _Tileset Transparent Textures_<a name="TrTe" />
 
 The [Transparent Textures] tiles are from the webpage https://www.transparenttextures.com/ 
 and are free to use. Momentary there are `396` tiles in the demo application available.
 
-<br />
 _Background:_ Winter sunset shinning through the trees &#040;Earth / Sunbeam&#041;  
 _Tile:_ Subtle White Feathers by Viahorizon  
 ![demo-application-modified2.png][demo-application-modified2]
@@ -311,7 +292,6 @@ _Tile:_ Subtle White Feathers by Viahorizon
 > The tile image is taken from https://www.transparenttextures.com/ and is free 
 > to use. Big thanks to the autor for his great work :smiley:. 
 
-<br />
 The tiles are loaded with the help from the enum [TransparentTexturesTile] which 
 is included into the library [Lib-Tile-TransparentTextures].
 
@@ -369,11 +349,9 @@ public enum TransparentTexturesTile implements Tile {
 }
 ```
 
-<br />
 For more informations and examples plz see the [ReadMe from Lib-Tile-TransparentTextures].
 
 
-<br />
 ### TitledPane About<a name="TiPaAb" />
 
 The [TitledPane] `About` show informations like description, autor, webpage, 
@@ -385,7 +363,6 @@ _Image:_ TitledPane About
 
 
 
-<br />
 Requirements<a name="Requirements" />
 ---
 
@@ -394,7 +371,6 @@ Requirements<a name="Requirements" />
 
 
 
-<br />
 Installation<a name="Installation" />
 ---
 
@@ -404,7 +380,6 @@ Installation<a name="Installation" />
 
 
 
-<br />
 Contribution<a name="Contribution" />
 ---
 
@@ -413,7 +388,6 @@ Contribution<a name="Contribution" />
 
 
 
-<br />
 License<a name="License" />
 ---
 
@@ -421,7 +395,6 @@ The project `Lib-Tile-Demo` is licensed under [General Public License 3.0].
 
 
 
-<br />
 Autor<a name="Autor" />
 ---
 
@@ -429,7 +402,6 @@ The project `Lib-Tile-Demo` is maintained by me, Peter Rogge. See [Contact](#Con
 
 
 
-<br />
 Contact<a name="Contact" />
 ---
 

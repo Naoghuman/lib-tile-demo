@@ -31,6 +31,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Refactoring
+#13 [Documentation] Fix output from the README in the browser.
 #8 [pom] Update the dependencies to the libraries in pom.xml.
 
 
@@ -45,6 +46,10 @@ Naoghuman
 
 
 [//]: # (Issues which will be integrated in this release)
+
+
+
+[//]: # (Images)
 
 
 
