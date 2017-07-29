@@ -31,6 +31,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Refactoring
+#14 [documentation] Tweak the 'about' page in the demo.
 #13 [Documentation] Fix output from the README in the browser.
 #8 [pom] Update the dependencies to the libraries in pom.xml.
 

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox id="VBox" prefHeight="400.0" prefWidth="284.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.naoghuman.lib.tile.demo.view.menu.about.AboutPresenter">
+<VBox id="VBox" prefHeight="496.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.naoghuman.lib.tile.demo.view.menu.about.AboutPresenter">
     <children>
         <Label text="Lib-Tile-Demo" underline="true">
             <font>
@@ -19,15 +17,18 @@
             <VBox.margin>
                 <Insets bottom="7.0" left="14.0" />
             </VBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
         </Label>
         <HBox>
             <children>
-                <Label prefWidth="56.0" text="Version:">
-                    <VBox.margin>
-                        <Insets left="14.0" />
-                    </VBox.margin>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Version:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
                 </Label>
-                <Label fx:id="lVersion" text="&lt;version&gt;" />
+                <Label fx:id="lVersion" text="&lt;version&gt;" wrapText="true" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
@@ -35,12 +36,12 @@
         </HBox>
         <HBox>
             <children>
-                <Label prefWidth="56.0" text="Autor:">
-                    <VBox.margin>
-                        <Insets left="14.0" />
-                    </VBox.margin>
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Autor:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
                 </Label>
-                <Label text="Naoghuman (Peter Rogge)" />
+                <Label text="Naoghuman (Peter Rogge)" wrapText="true" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
@@ -48,7 +49,11 @@
         </HBox>
         <HBox>
             <children>
-                <Label prefWidth="56.0" text="License:" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="License:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
                 <Label text="GNU General Public License Version 3" wrapText="true" />
             </children>
             <VBox.margin>
@@ -57,8 +62,12 @@
         </HBox>
         <HBox>
             <children>
-                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
-                <Label text="https://github.com/Naoghuman/lib-tile-demo" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="https://github.com/Naoghuman/lib-tile-demo" wrapText="true" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
@@ -76,11 +85,18 @@
             <VBox.margin>
                 <Insets bottom="7.0" left="14.0" />
             </VBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
         </Label>
         <HBox>
             <children>
-                <Label prefWidth="56.0" text="License:" />
-                <Label text="Free to use" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="License:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Free to use" wrapText="true" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
@@ -88,8 +104,12 @@
         </HBox>
         <HBox>
             <children>
-                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
-                <Label text="https://www.transparenttextures.com/" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="https://www.transparenttextures.com/" wrapText="true" />
             </children>
             <VBox.margin>
                 <Insets left="14.0" />
@@ -105,7 +125,11 @@
         </Label>
         <HBox>
             <children>
-                <Label minWidth="-Infinity" prefWidth="56.0" text="License:" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="License:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
                 <Label text="Creative Commons Attribution-No Derivative Works 3.0 Unported" wrapText="true" />
             </children>
             <VBox.margin>
@@ -114,7 +138,11 @@
         </HBox>
         <HBox>
             <children>
-                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:" />
+                <Label minWidth="-Infinity" prefWidth="56.0" text="Webpage:">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </Label>
                 <Label text="https://www.iconfinder.com/icons/27836/approve_block_cancel_delete_reject_icon" wrapText="true" />
             </children>
             <VBox.margin>
