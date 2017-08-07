@@ -21,16 +21,29 @@ import com.github.naoghuman.lib.action.api.IRegisterActions;
 import com.github.naoghuman.lib.action.api.TransferData;
 import com.github.naoghuman.lib.logger.api.LoggerFacade;
 import com.github.naoghuman.lib.tile.core.Tile;
+import com.github.naoghuman.lib.tile.core.TileLoader;
+import com.github.naoghuman.lib.tile.core.TileProvider;
+import com.github.naoghuman.lib.tile.customized.examples.reducedtileset.CustomizedExampleReducedTileSet;
 import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
+import com.github.naoghuman.lib.tile.demo.view.learnmore.LearnMoreView;
+import com.github.naoghuman.lib.tile.demo.view.menu.tile.customizedexampleaitem.CustomizedExampleAitemCell;
+import com.github.naoghuman.lib.tile.demo.view.menu.tile.customizedexampleaitem.CustomizedExampleAitemPresenter;
+import com.github.naoghuman.lib.tile.demo.view.menu.tile.customizedexampleaitem.CustomizedExampleAitemView;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.transparenttexturesitem.TransparentTexturesItemCell;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.transparenttexturesitem.TransparentTexturesItemPresenter;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.transparenttexturesitem.TransparentTexturesItemView;
-import com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTile;
-import com.github.naoghuman.lib.tile.transparenttextures.images.TransparentTexturesTileLoader;
+import com.github.naoghuman.lib.tile.transparenttextures.TransparentTexturesTileSet;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,8 +53,13 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
+import javafx.stage.Modality;
 
 /**
  *
@@ -51,6 +69,7 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     
     private static final int NO_SELECTION_INDEX = -1;
     
+    @FXML private ListView lvCustomizedTileExampleA;
     @FXML private ListView lvTransparentTextures;
     
     private int selectionIndex = NO_SELECTION_INDEX;
@@ -58,8 +77,54 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LoggerFacade.getDefault().info(this.getClass(), "Initialize TilePresenter"); // NOI18N
-        
+                
+        this.initializeCustomizedTileExamples();
         this.initializeTransparentTextures();
+    }
+
+    private void initializeCustomizedTileExamples() {
+        LoggerFacade.getDefault().info(this.getClass(), "Initialize CustomizedExamples"); // NOI18N
+        
+        lvCustomizedTileExampleA.getItems().clear();
+        lvCustomizedTileExampleA.setCellFactory(value -> new CustomizedExampleAitemCell());
+        
+        final Task task = new Task<ObservableList<CustomizedExampleAitemPresenter>>() {
+            @Override
+            protected ObservableList<CustomizedExampleAitemPresenter> call() throws InterruptedException {
+
+                final ObservableList<Tile> tiles = FXCollections.observableArrayList();
+                tiles.addAll(CustomizedExampleReducedTileSet.getDefault().getTiles());
+
+                final List<CustomizedExampleAitemPresenter> presenters = tiles.stream()
+                        .map((Tile tile) -> {
+                            final CustomizedExampleAitemView view = new CustomizedExampleAitemView();
+                            final CustomizedExampleAitemPresenter presenter = view.getRealPresenter();
+                            presenter.configure(view.getView(), tile);
+
+                            return presenter;
+                        })
+                        .collect(Collectors.toCollection(ArrayList::new));
+
+                return FXCollections.observableArrayList(presenters);
+            }
+        };
+        lvCustomizedTileExampleA.itemsProperty().bind(task.valueProperty());
+        new Thread(task).start();
+        
+        lvCustomizedTileExampleA.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                if (newValue instanceof CustomizedExampleAitemPresenter) {
+                    final CustomizedExampleAitemPresenter presenter = (CustomizedExampleAitemPresenter) newValue;
+                    final Optional<TileLoader> tileLoader = presenter.getTileLoader();
+                    if (tileLoader.isPresent()) {
+                        final Tile tile = presenter.getTile();
+                        TilePresenter.this.onActionShowTileBackground(tileLoader.get(), tile);
+                    }
+                }
+            }
+        });
     }
 
     private void initializeTransparentTextures() {
@@ -71,12 +136,11 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
         final Task task = new Task<ObservableList<TransparentTexturesItemPresenter>>() {
             @Override
             protected ObservableList<TransparentTexturesItemPresenter> call() throws InterruptedException {
-
-                final ObservableList<TransparentTexturesTile> tiles = FXCollections.observableArrayList();
-                tiles.addAll(TransparentTexturesTile.values());
+                final ObservableList<Tile> tiles = FXCollections.observableArrayList();
+                tiles.addAll(TransparentTexturesTileSet.getDefault().getTiles());
 
                 final List<TransparentTexturesItemPresenter> presenters = tiles.stream()
-                        .map((TransparentTexturesTile tile) -> {
+                        .map((Tile tile) -> {
                             final TransparentTexturesItemView view = new TransparentTexturesItemView();
                             final TransparentTexturesItemPresenter presenter = view.getRealPresenter();
                             presenter.configure(view.getView(), tile);
@@ -97,8 +161,11 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 if (newValue instanceof TransparentTexturesItemPresenter) {
                     final TransparentTexturesItemPresenter presenter = (TransparentTexturesItemPresenter) newValue;
-                    final Tile tile = presenter.getTile();
-                    TilePresenter.this.onActionShowTileBackground(tile);
+                    final Optional<TileLoader> tileLoader = presenter.getTileLoader();
+                    if (tileLoader.isPresent()) {
+                        final Tile tile = presenter.getTile();
+                        TilePresenter.this.onActionShowTileBackground(tileLoader.get(), tile);
+                    }
                 }
             }
         });
@@ -110,17 +177,50 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
         lvTransparentTextures.getSelectionModel().clearSelection();
         ActionFacade.getDefault().handle(ON_ACTION__RESET_TILE_BACKGROUND);
     }
+    
+    public void onActionShowLearnMore() {
+        LoggerFacade.getDefault().debug(this.getClass(), "On action reset Tile background"); // NOI18N
+        
+        // Show LearnMore in default browser if available
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().browse(new URL("https://github.com/Naoghuman/lib-tile-demo#BaIm").toURI()); // NOI18N
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(TilePresenter.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException | URISyntaxException ex) {
+                Logger.getLogger(TilePresenter.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            return;
+        }
+        
+        // Otherwise show LearnMore in a dialog
+        final Dialog<Parent> dialog = new Dialog<>();
+        dialog.initModality(Modality.NONE);
+        dialog.setTitle("Learn more..."); // NOI18N
+        dialog.setResizable(Boolean.FALSE);
+    
+        final ButtonType buttonTypeOk = new ButtonType("Okay", ButtonBar.ButtonData.OK_DONE); // NOI18N
+        dialog.getDialogPane().getButtonTypes().add(buttonTypeOk);
+        
+        // TODO check from where the dialog should be open -> opens different urls
+        final LearnMoreView view = new LearnMoreView();
+        dialog.getDialogPane().setContent(view.getView());
+        
+        dialog.show();
+    }
 
-    private void onActionShowTileBackground(Tile tile) {
+    private void onActionShowTileBackground(final TileLoader tileLoader, final Tile tile) {
         LoggerFacade.getDefault().debug(this.getClass(), "On action show Tile background"); // NOI18N
         
-        final TransferData data = new TransferData();
-        data.setActionId(ON_ACTION__SHOW_TILE_BACKGROUND);
+        final Optional<Background> background = TileProvider.getDefault().loadAsBackground(tileLoader, tile);
+        if (background.isPresent()) {
+            final TransferData data = new TransferData();
+            data.setActionId(ON_ACTION__SHOW_TILE_BACKGROUND);
+            data.setObject(background.get());
 
-        final Background background = TransparentTexturesTileLoader.getDefault().loadAsBackground(tile);
-        data.setObject(background);
-
-        ActionFacade.getDefault().handle(data);
+            ActionFacade.getDefault().handle(data);
+        }
     }
 
     private void onActionSwitchSelection(boolean titledPaneExpand) {

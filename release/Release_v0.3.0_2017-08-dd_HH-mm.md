@@ -19,6 +19,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Feature
+#11 [Feature] Integrate the library Lib-Tile-Customized-Examples.
 
 
 

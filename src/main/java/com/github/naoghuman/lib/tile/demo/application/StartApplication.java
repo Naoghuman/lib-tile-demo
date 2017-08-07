@@ -16,8 +16,6 @@
  */
 package com.github.naoghuman.lib.tile.demo.application;
 
-import static javafx.application.Application.launch;
-
 import com.airhacks.afterburner.injection.Injector;
 import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
 import com.github.naoghuman.lib.logger.api.LoggerFacade;
@@ -30,6 +28,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import static javafx.application.Application.launch;
 
 /**
  *

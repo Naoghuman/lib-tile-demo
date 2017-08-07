@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.github.naoghuman.lib.tile.demo.view.menu.tile.transparenttexturesitem;
+package com.github.naoghuman.lib.tile.demo.view.menu.tile.customizedexampleaitem;
 
 import com.github.naoghuman.lib.logger.api.LoggerFacade;
 import com.github.naoghuman.lib.tile.core.Tile;
@@ -38,23 +38,28 @@ import javafx.scene.layout.Background;
 import javafx.scene.text.Font;
 
 /**
- *
+ *  - use the TileLoader from TransparentTexturesTileSet.
+ *  - change the package from the images to original from TransparentTexturesTileSet
+ * 
+ *  - the example b will use then an own TileLoader.
+ * 
  * @author Naoghuman
  */
-public final class TransparentTexturesItemPresenter implements Initializable {
+public class CustomizedExampleAitemPresenter implements Initializable {
     
     @FXML private AnchorPane apBackground;
     @FXML private Label lAutor;
     @FXML private Label lHeader;
     
     private Optional<TileLoader> tileLoader = Optional.empty();
-    
+
     private Parent parent;
     private Tile tile;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoggerFacade.getDefault().trace(this.getClass(), "Initialize TransparentTexturesItemPresenter"); // NOI18N
+        LoggerFacade.getDefault().trace(this.getClass(), "Initialize CustomizedExamplesItemPresenter"); // NOI18N
+    
     }
     
     public final void configure(final Parent parent, final Tile tile) {
@@ -94,7 +99,7 @@ public final class TransparentTexturesItemPresenter implements Initializable {
         }
         
         // Background
-        Platform.runLater(() -> {
+        Platform.runLater(() -> { 
             if (tileLoader.isPresent()) {
                 final Optional<Background> background = TileProvider.getDefault().loadAsBackground(tileLoader.get(), tile);
                 if (background.isPresent()) {
