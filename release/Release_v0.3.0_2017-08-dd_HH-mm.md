@@ -24,6 +24,7 @@ project [Lib-Tile] with its included sublibraries which are:
 
 
 #### Enhancement
+#7 [pom] Add additional tags to the pom.xml.
 
 
 
