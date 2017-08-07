@@ -16,10 +16,11 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.menu.background;
 
-import com.github.naoghuman.lib.action.api.ActionFacade;
-import com.github.naoghuman.lib.action.api.IRegisterActions;
-import com.github.naoghuman.lib.action.api.TransferData;
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.action.core.ActionHandlerFacade;
+import com.github.naoghuman.lib.action.core.RegisterActions;
+import com.github.naoghuman.lib.action.core.TransferData;
+import com.github.naoghuman.lib.action.core.TransferDataBuilder;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
 import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
 import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
 import com.github.naoghuman.lib.tile.demo.configuration.IBackgroundConfiguration;
@@ -43,7 +44,7 @@ import javafx.scene.paint.Color;
  * @author Naoghuman
  */
 public class BackgroundPresenter implements Initializable, IActionConfiguration, 
-        IBackgroundConfiguration, IRegisterActions {
+        IBackgroundConfiguration, RegisterActions {
     
     @FXML private Button bResetSingleColor;
     @FXML private Button bResetXyGradient;
@@ -66,6 +67,8 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         this.initializeColorComponents();
         this.initializeColorPickerForBackgroundColor();
         this.initializeTextFieldForBackgroundImage();
+        
+        this.register();
     }
     
     private void initializeBackgroundParameters(ResourceBundle resources) {
@@ -107,7 +110,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     }
     
     @Override
-    public void registerActions() {
+    public void register() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register actions in BackgroundPresenter"); // NOI18N
     }
     
@@ -116,7 +119,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         
         cpBackgroundColor.setValue(IApplicationConfiguration.DEFAULT_BACKGROUND_COLOR);
         taXyGrandient.setText(null);
-        ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_COLOR);
+        ActionHandlerFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_COLOR);
     }
     
     public void onActionResetBackgroundImage() {
@@ -125,7 +128,7 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         tfUrlBackgroundImage.setText(null);
         pbImageLoading.progressProperty().unbind();
         pbImageLoading.setProgress(0.0d);
-        ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
+        ActionHandlerFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
     }
     
     public void onActionSelectSingleColor(ActionEvent event) {
@@ -169,13 +172,13 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
     public void onActionShowBackgroundColor() {
         LoggerFacade.getDefault().debug(this.getClass(), "On action select Background color"); // NOI18N
         
-        final TransferData data = new TransferData();
-        data.setActionId(ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR);
-        
         final Color backgroundColor = cpBackgroundColor.getValue();
-        data.setObject(backgroundColor);
+        final TransferData data = TransferDataBuilder.create()
+                .actionId(ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR)
+                .objectValue(backgroundColor)
+                .build();
         
-        ActionFacade.getDefault().handle(data);
+        ActionHandlerFacade.getDefault().handle(data);
     }
     
     public void onActionShowBackgroundImage() {
@@ -188,17 +191,18 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
                 || (url.isEmpty())
         ) {
             // Reset the Background image
-            ActionFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
+            ActionHandlerFacade.getDefault().handle(ON_ACTION__RESET_BACKGROUND_IMAGE);
             return;
         }
         
         // Load new Background image
-        final TransferData data = new TransferData();
-        data.setActionId(ON_ACTION__SHOW_BACKGROUND_IMAGE);
-        data.setString(url);
-        data.setObject(pbImageLoading);
+        final TransferData data = TransferDataBuilder.create()
+                .actionId(ON_ACTION__SHOW_BACKGROUND_IMAGE)
+                .stringValue(url)
+                .objectValue(pbImageLoading)
+                .build();
         
-        ActionFacade.getDefault().handle(data);
+        ActionHandlerFacade.getDefault().handle(data);
     }
     
     public void onActionShowBackgroundXyGradient() {
@@ -214,11 +218,12 @@ public class BackgroundPresenter implements Initializable, IActionConfiguration,
         }
         
         // Load new Background XyGradient
-        final TransferData data = new TransferData();
-        data.setActionId(ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT);
-        data.setString(backgroundColor);
+        final TransferData data = TransferDataBuilder.create()
+                .actionId(ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT)
+                .stringValue(backgroundColor)
+                .build();
         
-        ActionFacade.getDefault().handle(data);
+        ActionHandlerFacade.getDefault().handle(data);
     }
     
     public void onActionShowExampleBackgroundImage() {

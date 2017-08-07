@@ -16,18 +16,18 @@
  */
 package com.github.naoghuman.lib.tile.demo.application;
 
-import com.github.naoghuman.lib.action.api.ActionFacade;
-import com.github.naoghuman.lib.action.api.IRegisterActions;
-import com.github.naoghuman.lib.action.api.TransferData;
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.action.core.ActionHandlerFacade;
+import com.github.naoghuman.lib.action.core.RegisterActions;
+import com.github.naoghuman.lib.action.core.TransferData;
+import com.github.naoghuman.lib.action.core.TransferDataBuilder;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
 import com.github.naoghuman.lib.tile.demo.configuration.IActionConfiguration;
 import com.github.naoghuman.lib.tile.demo.images.ImagesLoader;
 import com.github.naoghuman.lib.tile.demo.view.menu.about.AboutView;
-import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundPresenter;
 import com.github.naoghuman.lib.tile.demo.view.menu.background.BackgroundView;
-import com.github.naoghuman.lib.tile.demo.view.menu.tile.TilePresenter;
 import com.github.naoghuman.lib.tile.demo.view.menu.tile.TileView;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -48,7 +48,7 @@ import javafx.scene.paint.Color;
  *
  * @author Naoghuman
  */
-public class ApplicationPresenter implements Initializable, IActionConfiguration, IRegisterActions {
+public class ApplicationPresenter implements Initializable, IActionConfiguration, RegisterActions {
     
     @FXML private AnchorPane apBackground;
     @FXML private AnchorPane apTileBackground;
@@ -71,18 +71,19 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         this.initializeMenuTile();
         this.initializeTitledPaneTile();
         
-        this.registerActions();
+        this.register();
     }
     
     private void initializeTitledPaneTile() {
         LoggerFacade.getDefault().info(this.getClass(), "Initialize TitledPane tile"); // NOI18N
     
         tpTile.expandedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
-            final TransferData data = new TransferData();
-            data.setActionId(ON_ACTION__SWITCH_SELECTION);
-            data.setBoolean(newValue);
+            final TransferData data = TransferDataBuilder.create()
+                    .actionId(ON_ACTION__SWITCH_SELECTION)
+                    .booleanValue(newValue)
+                    .build();
             
-            ActionFacade.getDefault().handle(data);
+            ActionHandlerFacade.getDefault().handle(data);
         });
     }
     
@@ -114,9 +115,6 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         LoggerFacade.getDefault().info(this.getClass(), "Initialize menu Background"); // NOI18N
         
         final BackgroundView view = new BackgroundView();
-        final BackgroundPresenter presenter = view.getRealPresenter();
-        presenter.registerActions();
-        
         bpMenuBackground.setCenter(view.getView());
     }
 
@@ -124,9 +122,6 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
         LoggerFacade.getDefault().info(this.getClass(), "Initialize menu Tile"); // NOI18N
         
         final TileView view = new TileView();
-        final TilePresenter presenter = view.getRealPresenter();
-        presenter.registerActions();
-        
         bpMenuTile.setCenter(view.getView());
     }
     
@@ -230,7 +225,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     }
     
     @Override
-    public void registerActions() {
+    public void register() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register actions in ApplicationPresenter"); // NOI18N
         
         this.registerOnActionResetBackgroundColor();
@@ -246,7 +241,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     private void registerOnActionResetBackgroundColor() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Background color"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__RESET_BACKGROUND_COLOR,
                 (ActionEvent event) -> {
                     this.onActionResetBackgroundColor();
@@ -256,7 +251,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     private void registerOnActionResetBackgroundImage() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Background image"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__RESET_BACKGROUND_IMAGE,
                 (ActionEvent event) -> {
                     this.onActionResetBackgroundImage();
@@ -266,7 +261,7 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     private void registerOnActionResetTileImage() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action reset Tile background"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__RESET_TILE_BACKGROUND,
                 (ActionEvent event) -> {
                     this.onActionResetTileBackground();
@@ -276,49 +271,73 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
     private void registerOnActionShowBackgroundSingleColor() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background SingleColor"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_SINGLECOLOR,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
-                    final Color backgroundColor = (Color) data.getObject();
-                    this.onActionShowBackgroundSingleColor(backgroundColor);
+                    final Optional<Object> optionalColor = data.getObject();
+                    if (
+                            optionalColor.isPresent()
+                            && (optionalColor.get() instanceof Color)
+                    ) {
+                        final Color background = (Color) optionalColor.get();
+                        this.onActionShowBackgroundSingleColor(background);
+                    }
                 });
     }
     
     private void registerOnActionShowBackgroundXyGradient() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background XyGradient"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_XY_GRADIENT,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
-                    final String backgroundColor = data.getString();
-                    this.onActionShowBackgroundXyGradient(backgroundColor);
+                    final Optional<String> optionalBackground = data.getString();
+                    if (optionalBackground.isPresent()) {
+                        final String background = optionalBackground.get();
+                        this.onActionShowBackgroundXyGradient(background);
+                    }
                 });
     }
 
     private void registerOnActionShowBackgroundImage() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Background image"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__SHOW_BACKGROUND_IMAGE,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
-                    final ProgressBar pbImageLoading = (ProgressBar) data.getObject();
-                    final String url = data.getString();
-                    this.onActionShowBackgroundImage(pbImageLoading, url);
+                    final Optional<Object> optionalProgressBar = data.getObject();
+                    final Optional<String> optionalURL = data.getString();
+                    
+                    if (
+                            optionalProgressBar.isPresent()
+                            && (optionalProgressBar.get() instanceof ProgressBar)
+                            && optionalURL.isPresent()
+                    ) {
+                        final ProgressBar pbImageLoading = (ProgressBar) optionalProgressBar.get();
+                        final String url = optionalURL.get();
+                        this.onActionShowBackgroundImage(pbImageLoading, url);
+                    }
                 });
     }
 
     private void registerOnActionShowTileImage() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action show Tile background"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__SHOW_TILE_BACKGROUND,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
-                    final Background background = (Background) data.getObject();
-                    this.onActionShowTileBackground(background);
+                    final Optional<Object> optionalBackground = data.getObject();
+                    if (
+                            optionalBackground.isPresent()
+                            && (optionalBackground.get() instanceof Background)
+                    ) {
+                        final Background background = (Background) optionalBackground.get();
+                        this.onActionShowTileBackground(background);
+                    }
                 });
     }
     

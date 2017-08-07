@@ -16,7 +16,7 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.menu.tile.customizedexampleaitem;
 
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
 import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileLoader;
 import com.github.naoghuman.lib.tile.core.TileProvider;

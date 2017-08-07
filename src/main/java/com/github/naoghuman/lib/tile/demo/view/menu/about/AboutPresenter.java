@@ -16,8 +16,8 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.menu.about;
 
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
-import com.github.naoghuman.lib.properties.api.PropertiesFacade;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
+import com.github.naoghuman.lib.properties.core.PropertiesFacade;
 import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
 import java.net.URL;
 import java.util.ResourceBundle;

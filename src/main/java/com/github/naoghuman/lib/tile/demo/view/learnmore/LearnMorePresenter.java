@@ -16,7 +16,7 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.learnmore;
 
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.concurrent.Worker;

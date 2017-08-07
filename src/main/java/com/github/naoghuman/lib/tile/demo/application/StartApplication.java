@@ -18,9 +18,9 @@ package com.github.naoghuman.lib.tile.demo.application;
 
 import com.airhacks.afterburner.injection.Injector;
 import com.github.naoghuman.lib.tile.demo.configuration.IApplicationConfiguration;
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
-import com.github.naoghuman.lib.preferences.api.PreferencesFacade;
-import com.github.naoghuman.lib.properties.api.PropertiesFacade;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
+import com.github.naoghuman.lib.preferences.core.PreferencesFacade;
+import com.github.naoghuman.lib.properties.core.PropertiesFacade;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.application.Platform;

@@ -16,10 +16,11 @@
  */
 package com.github.naoghuman.lib.tile.demo.view.menu.tile;
 
-import com.github.naoghuman.lib.action.api.ActionFacade;
-import com.github.naoghuman.lib.action.api.IRegisterActions;
-import com.github.naoghuman.lib.action.api.TransferData;
-import com.github.naoghuman.lib.logger.api.LoggerFacade;
+import com.github.naoghuman.lib.action.core.ActionHandlerFacade;
+import com.github.naoghuman.lib.action.core.RegisterActions;
+import com.github.naoghuman.lib.action.core.TransferData;
+import com.github.naoghuman.lib.action.core.TransferDataBuilder;
+import com.github.naoghuman.lib.logger.core.LoggerFacade;
 import com.github.naoghuman.lib.tile.core.Tile;
 import com.github.naoghuman.lib.tile.core.TileLoader;
 import com.github.naoghuman.lib.tile.core.TileProvider;
@@ -65,7 +66,7 @@ import javafx.stage.Modality;
  *
  * @author Naoghuman
  */
-public class TilePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+public class TilePresenter implements Initializable, IActionConfiguration, RegisterActions {
     
     private static final int NO_SELECTION_INDEX = -1;
     
@@ -80,6 +81,8 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
                 
         this.initializeCustomizedTileExamples();
         this.initializeTransparentTextures();
+        
+        this.register();
     }
 
     private void initializeCustomizedTileExamples() {
@@ -175,7 +178,7 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
         LoggerFacade.getDefault().debug(this.getClass(), "On action reset Tile background"); // NOI18N
         
         lvTransparentTextures.getSelectionModel().clearSelection();
-        ActionFacade.getDefault().handle(ON_ACTION__RESET_TILE_BACKGROUND);
+        ActionHandlerFacade.getDefault().handle(ON_ACTION__RESET_TILE_BACKGROUND);
     }
     
     public void onActionShowLearnMore() {
@@ -215,11 +218,12 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
         
         final Optional<Background> background = TileProvider.getDefault().loadAsBackground(tileLoader, tile);
         if (background.isPresent()) {
-            final TransferData data = new TransferData();
-            data.setActionId(ON_ACTION__SHOW_TILE_BACKGROUND);
-            data.setObject(background.get());
+            final TransferData data = TransferDataBuilder.create()
+                    .actionId(ON_ACTION__SHOW_TILE_BACKGROUND)
+                    .objectValue(background.get())
+                    .build();
 
-            ActionFacade.getDefault().handle(data);
+            ActionHandlerFacade.getDefault().handle(data);
         }
     }
 
@@ -258,7 +262,7 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     }
     
     @Override
-    public void registerActions() {
+    public void register() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register actions in TilePresenter"); // NOI18N
         
         this.registerOnActionSwitchSelection();
@@ -267,12 +271,14 @@ public class TilePresenter implements Initializable, IActionConfiguration, IRegi
     private void registerOnActionSwitchSelection() {
         LoggerFacade.getDefault().debug(this.getClass(), "Register on Action switch Selection"); // NOI18N
         
-        ActionFacade.getDefault().register(
+        ActionHandlerFacade.getDefault().register(
                 ON_ACTION__SWITCH_SELECTION,
                 (ActionEvent event) -> {
                     final TransferData data = (TransferData) event.getSource();
-                    final boolean titledPaneExpand = data.getBoolean();
-                    this.onActionSwitchSelection(titledPaneExpand);
+                    final Optional<Boolean> titledPaneExpand = data.getBoolean();
+                    if (titledPaneExpand.isPresent()) {
+                        this.onActionSwitchSelection(titledPaneExpand.get());
+                    }
                 });
     }
     
